@@ -1,0 +1,33 @@
+<div layout="vertical" layout-fill>
+    <md-sidenav layout="column" class="md-sidenav-left" md-whiteframe="4" md-component-id="left"
+                md-is-locked-open="$mdMedia('gt-md') && !vm.unlockLeftBar">
+        <md-toolbar class="md-hue-2">
+            <div ng-if="!$root.offlineMode && vm.username" layout="column" class="md-toolbar-tools-bottom inset">
+                <span>Logged as <strong>{{::vm.username}}</strong></span>
+            </div>
+            <div ng-if="!$root.offlineMode && !vm.username" layout="column" class="md-toolbar-tools-bottom inset">
+                <span>Logged as Guest</span>
+            </div>
+            <div layout="column" ng-if="$root.offlineMode" class="md-toolbar-tools-bottom inset">
+                <span style="color:yellow">Offline mode</span>
+            </div>
+        </md-toolbar>
+        <md-list>
+            <md-item ng-if="!$root.offlineMode" ui-sref="app.browse">
+                    <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                        <div class="inset">
+                            <ng-md-icon icon="subscriptions"></ng-md-icon>
+                        </div>
+                        <div class="inset">Browse
+                        </div>
+                    </md-item-content>
+            </md-item>
+            <md-divider></md-divider>
+            <md-divider></md-divider>
+        </md-list>
+    </md-sidenav>
+    <div layout="column" flex>
+        <md-content class="no-padding" layout="column" flex ui-view></md-content>
+        <player></player>
+    </div>
+</div>

@@ -1,0 +1,3 @@
+[submodule "src/forked_modules/angular-popover"]
+	path = src/forked_modules/angular-popover
+	url = https://github.com/FauzanKhan/angular-popover.git

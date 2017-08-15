@@ -1,0 +1,10 @@
+<div class="inset" hide-sm></div>
+<md-content md-scroll-y class="md-padding" layout-wrap layout-xs="column" layout="row">
+    <torrent-item class="torrentItem" flex-gt-sm="33" flex-md="25" flex
+                  ng-repeat="item in vm.torrentList track by $index" ng-if="item.type !== 'unknown'"
+                  entry="item">
+    </torrent-item>
+</md-content>
+<md-content ng-if="vm.torrentList.length > 0" layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+    <md-button md-no-ink class="md-primary" ng-click="vm.getMore()">Get more</md-button>
+</md-content>

@@ -1,0 +1,17 @@
+<md-toolbar md-colors="{background: 'grey-A100'}">
+    <div class="md-toolbar-tools">
+        <div class="md-padding">
+            <md-button ng-click="vm.toggleSidenav()">
+                <md-icon ng-md-icon icon="menu" style="fill:black"></md-icon>
+            </md-button>
+        </div>
+        <h3>Video</h3>
+        <span flex></span>
+        <md-button ng-click="vm.back()">
+            <md-icon ng-md-icon icon="keyboard_arrow_down" style="fill:black"></md-icon>
+        </md-button>
+    </div>
+</md-toolbar>
+<md-content>
+    <video class="videoInsert" id="video"></video>
+</md-content>

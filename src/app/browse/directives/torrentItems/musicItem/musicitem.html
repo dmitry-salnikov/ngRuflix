@@ -1,0 +1,21 @@
+<div>
+    <md-card-title-media>
+        <img src="app/images/music.png" class="md-media-sm card-img">
+    </md-card-title-media>
+
+    <md-card-title>
+        <md-card-title-text class="card-title-text">
+            <span><i>{{ ::entry.topic_title.substr(0,60) }}...</i></span>
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+        <span class="md-caption">Audio</span>
+        <p class="md-caption">Seeders: {{ ::entry.seeders }}<br>Size: {{ ::(entry.size / 1024 / 1024).toFixed(2)}} MB</p>
+    </md-card-content>
+    <md-card-actions layout="row" layout-align="end center">
+        <md-button ng-click="play()">
+            <md-icon ng-md-icon flex="10" class="md-icon-button" icon="play_circle_outline" flex="40"></md-icon>
+            <span flex="90">Play</span>
+        </md-button>
+    </md-card-actions>
+</div>

@@ -1,0 +1,76 @@
+<md-toolbar ng-show="enabled" class="player md-whiteframe-6dp pull-right md-padding">
+    <div layout="container"
+         ng-show="playerStatus.playingStatus === playingStatusEnum.PLAYING || playerStatus.playingStatus === playingStatusEnum.PAUSED">
+        <div layout="vertical"
+             class="player-controls" flex="10" flex-gt-xs="15">
+            <md-button class="cursor no-padding" hide-xs ng-click="prev()">
+                <md-icon ng-md-icon icon="skip_previous"></md-icon>
+            </md-button>
+            <md-button class="cursor" ng-if="tab.closable" flex ng-click="vm.closeTab($index)">
+                <md-icon ng-md-icon icon="close"></md-icon>
+            </md-button>
+            <md-button class="cursor no-padding" ng-show="playerStatus.playingStatus === playingStatusEnum.PAUSED"
+                       ng-click="play()">
+                <md-icon ng-md-icon icon="play_arrow"></md-icon>
+            </md-button>
+            <md-button class="cursor no-padding" ng-show="playerStatus.playingStatus !== playingStatusEnum.PAUSED"
+                       ng-click="pause()">
+                <md-icon ng-md-icon icon="pause"></md-icon>
+            </md-button>
+            <md-button ng-click="next()" hide-xs class="cursor no-padding">
+                <md-icon ng-md-icon icon="skip_next"></md-icon>
+            </md-button>
+        </div>
+        <div class="player-middle" flex="auto">
+            <div layout="column">
+                <span style="margin-left:15px" class="md-caption oneLine">{{playerStatus.track.name.substr(0, 20)}}</span>
+                <div layout="row">
+                    <div flex="15" flex-gt-sm="10" layout layout-align="center center">
+                        <span class="md-body-1 md-caption"><i>{{(position || 0) | playingTimeIndicator | date:'H:mm:ss'}}</i></span>
+                    </div>
+                    <md-slider-container flex="auto">
+                        <md-slider class="md-warn cursor"
+                                   ng-model="position" round="0"
+                                   min="0" ng-change="unlockPositionSlider()"
+                                   max="{{playerStatus.track.length}}" aria-label="rating">
+                        </md-slider>
+                    </md-slider-container>
+                    <div flex-gt-sm="10" layout layout-align="center center">
+                        <span class="md-body-1 md-caption"><i>{{(playerStatus.track.length || 0) | playingTimeIndicator | date:'H:mm:ss'}}</i></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="player-right" layout="end end" flex="10">
+            <md-icon ng-popover="volume.html"
+                     placement="top"
+                     id="vol"
+                     ng-md-icon
+                     icon="volume_up"></md-icon>
+            <md-button class="cursor no-padding" ng-if="currentState !== 'app.nowplaying'" ng-click="openNowPlaying()">
+                <md-icon ng-md-icon icon="keyboard_arrow_up"></md-icon>
+            </md-button>
+            <md-button class="cursor no-padding" ng-if="currentState === 'app.nowplaying'" ng-click="closeNowPlaying()">
+                <md-icon ng-md-icon icon="keyboard_arrow_down"></md-icon>
+            </md-button>
+            <md-button class="cursor no-padding" ng-if="playerStatus.track.mime.indexOf('video') > -1" ng-click="fullscreen()">
+                <md-icon ng-md-icon icon="fullscreen"></md-icon>
+            </md-button>
+        </div>
+    </div>
+    <div layout="container md-padding" ng-show="playerStatus.playingStatus === playingStatusEnum.BUFFERING">
+        <div class="column" flex>
+            <span class="md-caption">Buffering...</span>
+            <md-progress-linear flex md-mode="indeterminate"></md-progress-linear>
+        </div>
+    </div>
+</md-toolbar>
+<script id="volume.html" type="text/ng-template">
+    <md-slider class="cursor" ng-model="volume" ng-mouseleave="closeVolume()"
+               min="1"
+               max="100"
+               step="1"
+               aria-label="volume" id="volume-slider" class="md-accent" md-vertical></md-slider>
+</script>

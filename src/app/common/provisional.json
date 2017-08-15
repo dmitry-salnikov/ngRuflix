@@ -1,0 +1,9 @@
+{
+  "hostFront": false,
+  "frontDir": "node_modules/ui-rustreamer",
+  "port": "7000",
+  "debug": false,
+  "ApiEndpoint": "http://api.rutracker.org:80",
+  "FeedEndpoint": "http://feed.rutracker.org/atom/f/1880.atom",
+  "run": false
+}

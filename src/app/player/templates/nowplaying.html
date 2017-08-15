@@ -1,0 +1,22 @@
+<md-toolbar md-colors="{background: 'grey-A100'}">
+    <div class="md-toolbar-tools">
+        <div class="md-padding">
+            <md-icon ng-md-icon icon="play_circle_outline"></md-icon>
+        </div>
+        <h3 flex>Now playing</h3>
+    </div>
+</md-toolbar>
+<md-content class="no-padding" flex>
+<!--playlist-->
+    <md-list>
+        <md-list-item ng-repeat="track in vm.list track by track.id">
+            <md-button ng-click="vm.playTrack($index)" flex layout="start center">
+                <p class="md-caption">
+                    <i ng-class="{'current-track': $index === playerStatus.track.trackIndex}">{{$index+1}}.
+                        {{track.name}}</i>
+                </p>
+            </md-button>
+            <md-divider></md-divider>
+        </md-list-item>
+    </md-list>
+</md-content>

@@ -1,0 +1,8 @@
+<div class="inset" hide-sm></div>
+<h2>Search results for query: {{vm.query}} </h2>
+<md-content md-scroll-y class="md-padding" layout-wrap layout-xs="column" layout="row">
+    <torrent-item class="torrentItem" flex-sm="33" flex-gt-sm="25" flex
+                  ng-repeat="item in vm.torrentItems track by $index"
+                  entry="item">
+    </torrent-item>
+</md-content>

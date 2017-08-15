@@ -1,0 +1,43 @@
+<md-list-item class="md-2-line md-whiteframe-z2">
+    <div layout="column" layout-fill class="md-padding">
+        <div layout="row">
+            <div flex="20" class="folderThumb">
+                <img src="app/images/folder.png" class="md-avatar"/>
+            </div>
+            <div flex="75" layout="row" layout-fill>
+                <h3>{{ ::categoryViewObject.category.name }}</h3>
+            </div>
+            <div flex="5" layout="row" layout-align="end center">
+                <ng-md-icon icon="keyboard_arrow_right"></ng-md-icon>
+            </div>
+        </div>
+        <div>
+            <div layout="column" layout-fill class="expanded">
+                <md-list>
+                    <md-list-item ng-repeat="forum in categoryViewObject.children" class="md-1-line">
+                      <div layout="column" ng-click="toggleSelect($index)" layout-fill>
+                        <div layout="row">
+                          <div flex>
+                            <span>
+                              {{ ::forum.name}}
+                            </span>
+                            </div>
+                            <div flex="5" ng-if="forum.type !== 'subforum'">
+                              <ng-md-icon flex icon="expand_more"></ng-md-icon>
+                            </div>
+                        </div>
+                        <md-list class="menu-toggle-list row collapsed" ng-if="forum.type !== 'subforum'"
+                        ng-class="{'expanded': selectedForumId === forum.id}">
+                          <md-list-item ng-repeat="subforum in forum.subforums"
+                          ng-click="openSubforum(subforum)"
+                          class="menu-toggle-list-child">
+                            {{::subforum.name}}
+                          </md-list-item>
+                        </md-list>
+                      </div>
+                    </md-list-item>
+                </md-list>
+            </div>
+        </div>
+        </div>
+</md-list-item>
