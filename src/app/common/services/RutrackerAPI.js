@@ -110,10 +110,11 @@ module.exports = function ($http, $q, Utils) {
         /**
          * Runs search and resolves with List<TorrentItems>
          * @param {string} query for now just string with text
+         * @param {object} search options
          * @this
          * @return {Promise}
          */
-        search: function (query) {
+        search: function (query, options) {
             var req = {
                 method: 'POST',
                 url: _endpoint + '/search',
@@ -121,7 +122,7 @@ module.exports = function ($http, $q, Utils) {
                     'Accept': 'application/json;charset=windows-1251',
                     'Accept-Charset': 'charset=windows-1251'
                 },
-                data: {query: query}
+                data: {query: query, options: options}
             };
 
             function transformToIds(entries) {
@@ -136,6 +137,9 @@ module.exports = function ($http, $q, Utils) {
             return $http(req)
                 .then(transformToIds)
                 .then(this.getTopicData);
+        },
+        getFiles: function (torrentId) {
+            return $http.get(_endpoint + /getFiles/ + torrentId);
         },
         getEndpoint: function () {
             return _endpoint;

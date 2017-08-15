@@ -39,6 +39,11 @@ let app = angular.module('app', [
     'app.browse',
     'app.auth'])
     .config(require('./Routing'))
+    .config(($mdThemingProvider) => {
+        $mdThemingProvider.theme('default')
+            .primaryPalette('grey')
+            .accentPalette('pink');
+    })
     .config(($translateProvider) => {
         $translateProvider
             .registerAvailableLanguageKeys(['en_US', 'pl_PL'])
