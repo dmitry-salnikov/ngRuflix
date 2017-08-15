@@ -2,11 +2,10 @@
  * TCD Software
  * Created by Dmitrij Rysanow on 16.11.16.
  */
+import '../index.html';
 
 import 'angular';
 import 'lodash';
-import '../forked_modules/angular-popover/dist/js/ngPopover.min';
-import '../forked_modules/angular-popover/dist/css/ngpopover.css';
 import './css/custom.css';
 import 'es5-shim';
 import 'es5-sham';
@@ -17,11 +16,13 @@ import 'angular-material/angular-material.css';
 import 'roboto-fontface/css/roboto/roboto-fontface.css';
 import 'angular-material-icons';
 import 'angular-loading-bar';
-import './auth/index';
-import './player/index';
-import './browse/index';
+import './auth';
+import './player';
+import './browse';
 
 import SplashScreenController from './controllers/SplashScreenController';
+import AppController from './controllers/AppController';
+import APP_EVENTS from './controllers/AppController';
 
 const app = angular.module('app', [
             'ui.router',
@@ -39,3 +40,6 @@ const app = angular.module('app', [
         });
 
 app.controller('SplashScreenController', SplashScreenController);
+app.controller('AppController', AppController);
+app.constant('APP_EVENTS', APP_EVENTS);
+export default app;

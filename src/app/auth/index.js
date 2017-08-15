@@ -19,3 +19,4 @@ var app = angular.module('app.auth', [
  */
 app.controller('LoginController', require('./controllers/LoginController'));
 app.config(require('./Routing'));
+export default app;

@@ -2,7 +2,8 @@
  * Created by tcd on 04.03.17.
  */
 
-'use strict';
+import PLAYER_GLOBAL_CONTROLS from '../services/PlayerService';
+import APP_EVENTS from '../../controllers/AppController';
 
 /**
  *
@@ -12,11 +13,9 @@
  */
 module.exports = function (PlayerService,
                                           $scope,
-                                          APP_EVENTS,
                                           PreviousState,
                                           $state,
-                                          $rootScope,
-                                          PLAYER_GLOBAL_CONTROLS) {
+                                          $rootScope) {
     var vm = this;
     var element = document.getElementById('video');
     vm.playerStatus = {};

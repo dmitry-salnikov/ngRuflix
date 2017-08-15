@@ -200,6 +200,10 @@ module.exports = function makeWebpackConfig() {
             // Reference: http://webpack.github.io/docs/list-of-plugins.html#noerrorsplugin
             // Only emit files when there are no errors
             new webpack.NoErrorsPlugin(),
+            new webpack.HotModuleReplacementPlugin(),
+            new HtmlWebpackPlugin({
+                template: './src/index.html'
+            }),
 
             // Reference: http://webpack.github.io/docs/list-of-plugins.html#dedupeplugin
             // Dedupe modules in the output
@@ -224,7 +228,9 @@ module.exports = function makeWebpackConfig() {
      */
     config.devServer = {
         contentBase: './src/',
-        stats: 'minimal'
+        stats: 'minimal',
+        hot: true,
+        inline:true
     };
 
     return config;

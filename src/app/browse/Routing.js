@@ -13,7 +13,7 @@ module.exports = function($stateProvider) {
         .state('app.browse.category', {
             url: '/category/:id',
             templateUrl: 'app/browse/tabs/CategoryTab/category.html',
-            controller: 'CategoryController',
+            controller: 'CategoryTabController',
             controllerAs: 'vm',
             params: {
                 subCategories: [],
@@ -23,15 +23,15 @@ module.exports = function($stateProvider) {
         })
         .state('app.browse.dashboard', {
             url: '/dashboard',
-            templateUrl: 'app/browse/tabs/DashboardTab/dashboard.html',
-            controller: 'DashboardController',
+            templateUrl: 'app/browse/tpl/dashboard.html',
+            controller: 'DashboardTabController',
             controllerAs: 'vm',
             cache: true
         })
         .state('app.browse.subforum', {
             url: '/subforum/:id',
             templateUrl: 'app/browse/tabs/SubforumTab/subforum.html',
-            controller: 'SubforumController',
+            controller: 'SubforumTabController',
             controllerAs: 'vm',
             cache: true
         })
@@ -42,4 +42,4 @@ module.exports = function($stateProvider) {
             controllerAs: 'vm',
             cache: true
         });
-}
+};

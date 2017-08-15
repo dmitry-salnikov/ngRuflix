@@ -2,17 +2,23 @@
  * TCD Software
  * Created by Dmitrij Rysanow on 08.02.17.
  */
+export const PLAYER_GLOBAL_CONTROLS = {
+    OPEN_NOW_PLAYING: 'OPEN_NOW_PLAYING',
+    OPEN_FULLSCREEN: 'OPEN_FULLSCREEN',
+    CLOSE_NOW_PLAYING: 'CLOSE_NOW_PLAYING'
+};
 /**
  *
  * @param {TorrentAPI} TorrentAPI
  * @param {!angular.interval} $interval
  * @param {IAbstractPlayerListener} IAbstractPlayerListener
  * @param {$state} $state
+ * @param {AuthService} AuthService from app.common
  * @return {angular.factory}
  * @export
  * @constructor
  */
-module.exports = function (TorrentAPI,
+export default function (TorrentAPI,
                            $interval,
                            IAbstractPlayerListener,
                            $state,

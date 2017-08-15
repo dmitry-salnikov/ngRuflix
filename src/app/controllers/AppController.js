@@ -2,6 +2,15 @@
  * TCD Software
  * Created by Dmitrij Rysanow on 18.11.16.
  */
+export const APP_EVENTS = {
+    REQUEST_CLOSE_LEFTBAR: 'REQUEST_CLOSE_LEFTBAR',
+    REQUEST_OPEN_LEFTBAR: 'REQUEST_OPEN_LEFTBAR',
+    REQUEST_TOGGLE_LEFTBAR: 'REQUEST_TOGGLE_LEFTBAR',
+    REQUEST_MOBILE_LEFTBAR: 'REQUEST_MOBILE_LEFTBAR',
+    REQUEST_DEFAULT_LEFTBAR: 'REQUEST_DEFAULT_LEFTBAR',
+    REQUEST_CLOSE_INFOBAR: 'REQUEST_CLOSE_INFOBAR',
+    REQUEST_OPEN_INFOBAR: 'REQUEST_OPEN_INFOBAR'
+};
 /**
  * AppController
  *
@@ -9,15 +18,13 @@
  * @param {!angular.scope} $rootScope
  * @param {$mdSidenav} $mdSidenav
  * @param {*} $mdToast
- * @param {angular.constant} APP_EVENTS
  * @constructor
  * @ngInject
  */
-module.exports = function (AuthService,
+export default function (AuthService,
                            $mdToast,
                            $mdSidenav,
-                           $rootScope,
-                           APP_EVENTS) {
+                           $rootScope) {
     'use strict';
     var vm = this;
     vm.player = true;

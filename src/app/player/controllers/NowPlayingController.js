@@ -1,8 +1,9 @@
 /**
-* TCD Software
-* Created by Dmitrij Rysanow on 17.02.17.
-*/
+ * TCD Software
+ * Created by Dmitrij Rysanow on 17.02.17.
+ */
 
+import {PLAYER_GLOBAL_CONTROLS} from '../services/PlayerService';
 /**
  *
  * @param {PlayerService} PlayerService
@@ -13,33 +14,35 @@
  * @ngInject
  */
 module.exports = function (PlayerService,
-                          PreviousState,
-                          $state,
-                          PLAYER_GLOBAL_CONTROLS,
-                          $rootScope) {
-var vm = this;
-'use strict';
-function init() {
-    vm.list = PlayerService.getPlaylist();
-    PlayerService.addListener(PlayerListener);
-}
-/**
- * @implements {IAbstractPlayer}
- * @constructor
- */
-function PlayerListener() {}
-PlayerListener.prototype.updateStatus = function(status) {
-    vm.playerStatus = status;
-};
-PlayerListener.prototype.activate = function() {
+                           PreviousState,
+                           $state,
+                           $rootScope) {
+    var vm = this;
+    'use strict';
+    function init() {
+        vm.list = PlayerService.getPlaylist();
+        PlayerService.addListener(PlayerListener);
+    }
 
-};
+    /**
+     * @implements {IAbstractPlayer}
+     * @constructor
+     */
+    function PlayerListener() {
+    }
 
-vm.back = function() {
-    $state.go(PreviousState.Name, PreviousState.Params);
-};
-$rootScope.$on(PLAYER_GLOBAL_CONTROLS.CLOSE_NOW_PLAYING, vm.back);
+    PlayerListener.prototype.updateStatus = function (status) {
+        vm.playerStatus = status;
+    };
+    PlayerListener.prototype.activate = function () {
 
-vm.playTrack = PlayerService.jumpToTrackOnPlaylist;
-init();
+    };
+
+    vm.back = function () {
+        $state.go(PreviousState.Name, PreviousState.Params);
+    };
+    $rootScope.$on(PLAYER_GLOBAL_CONTROLS.CLOSE_NOW_PLAYING, vm.back);
+
+    vm.playTrack = PlayerService.jumpToTrackOnPlaylist;
+    init();
 };

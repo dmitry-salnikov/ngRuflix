@@ -48,3 +48,4 @@ app.controller('SearchTabController', require('./controllers/SearchTabController
  */
 app.controller('SubforumTabController', require('./controllers/SubforumTabController'));
 app.config(require('./Routing'));
+export default app;

@@ -4,7 +4,7 @@
   "description": "ngRuflix is new front part of Ruflix.",
   "scripts": {
     "build": "rimraf dist && webpack --bail --progress --profile",
-    "server": "webpack-dev-server --history-api-fallback --inline --progress",
+    "server": "webpack-dev-server --history-api-fallback --inline --hot --progress",
     "test": "karma start",
     "test-watch": "karma start --auto-watch --no-single-run",
     "start": "node server.js & npm run server"
@@ -30,6 +30,7 @@
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",
     "lokijs": "^1.4.3",
+    "ng-popover": "^2.0.0",
     "roboto-fontface": "^0.8.0",
     "webpack-node-externals": "^1.6.0"
   },
@@ -43,7 +44,7 @@
     "css-loader": "0.26.1",
     "extract-text-webpack-plugin": "2.0.0-beta.5",
     "file-loader": "^0.9.0",
-    "html-webpack-plugin": "^2.7.1",
+    "html-webpack-plugin": "^2.30.1",
     "istanbul-instrumenter-loader": "^1.0.0",
     "jasmine-core": "^2.3.4",
     "karma": "^1.1.0",

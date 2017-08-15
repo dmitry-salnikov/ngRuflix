@@ -2,6 +2,7 @@
 * TCD Software
 * Created by Dmitrij Rysanow on 18.11.16.
 */
+import _ from 'lodash';
 /**
  * Browse controller
  *
@@ -177,7 +178,7 @@ module.exports = function ($scope,
         if ($rootScope.tabs) {
             vm.tabs = $rootScope.tabs;
         }
-        var tab = vm.tabs.indexOf(_.where(vm.tabs, {"route":$state.current.name})[0]);
+        var tab = vm.tabs.indexOf(_.filter(vm.tabs, {"route":$state.current.name})[0]);
         if (tab > 0) {
             vm.selectedTab = tab;
         } else {
