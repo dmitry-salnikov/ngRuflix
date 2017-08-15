@@ -1,7 +1,7 @@
 /**
-* TCD Software
-* Created by Dmitrij Rysanow on 18.11.16.
-*/
+ * TCD Software
+ * Created by Dmitrij Rysanow on 18.11.16.
+ */
 import _ from 'lodash';
 /**
  * Browse controller
@@ -14,11 +14,11 @@ import _ from 'lodash';
  * @constructor
  * @ngInject
  */
-module.exports = function ($scope,
-                          $mdSidenav,
-                          RutrackerAPI,
-                          $state,
-                          $rootScope) {
+export default function ($scope,
+                           $mdSidenav,
+                           RutrackerAPI,
+                           $state,
+                           $rootScope) {
     'use strict';
     var vm = this;
     /**
@@ -113,18 +113,21 @@ module.exports = function ($scope,
     var CHANSON_MUSIC_FORUM = 1215;
     var OTHER_MUSIC_FORUM = 413;
 
+    vm.selectedTorrent = {};
+
     /**
      * Array with tab views
      * @type {Array}
+     *
      */
     vm.tabs = [
         {
-            name: 'Dashboard',
+            name: 'DASHBOARD',
             route: 'app.browse.dashboard',
             params: {}
         },
         {
-            name: 'Music',
+            name: 'MUSIC',
             route: 'app.browse.category',
             params: {
                 'id': MUSIC_CAT,
@@ -147,7 +150,7 @@ module.exports = function ($scope,
             }
         },
         {
-            name: 'Movies',
+            name: 'MOVIES',
             route: 'app.browse.category',
             params: {
                 'id': VIDEO_CAT,
@@ -169,6 +172,10 @@ module.exports = function ($scope,
                     ANIME
                 ]
             }
+        },
+        {
+            name: 'LIKED',
+            route: 'app.browse.liked'
         }
     ];
     /**
@@ -178,7 +185,7 @@ module.exports = function ($scope,
         if ($rootScope.tabs) {
             vm.tabs = $rootScope.tabs;
         }
-        var tab = vm.tabs.indexOf(_.filter(vm.tabs, {"route":$state.current.name})[0]);
+        var tab = vm.tabs.indexOf(_.filter(vm.tabs, {"route": $state.current.name})[0]);
         if (tab > 0) {
             vm.selectedTab = tab;
         } else {
@@ -202,6 +209,7 @@ module.exports = function ($scope,
             closable: true
         };
     }
+
     /**
      * Gets view for subforum
      * @param  {Object} subforum
@@ -229,7 +237,7 @@ module.exports = function ($scope,
     /**
      * Go to next tab
      */
-    vm.nextTab = function() {
+    vm.nextTab = function () {
         if (vm.selectedTab !== vm.tabs.length - 1) {
             vm.selectedTab++;
             $state.go(vm.tabs[vm.selectedTab].route);
@@ -238,7 +246,7 @@ module.exports = function ($scope,
     /**
      * Go to previous tab
      */
-    vm.prevTab = function() {
+    vm.prevTab = function () {
         if (vm.selectedTab !== 0) {
             vm.selectedTab--;
             $state.go(vm.tabs[vm.selectedTab].route);
@@ -250,13 +258,13 @@ module.exports = function ($scope,
      * Closes tab at the index
      * @param {Number} selectedTab
      */
-    vm.closeTab = function(selectedTab) {
+    vm.closeTab = function (selectedTab) {
         vm.tabs.splice(selectedTab, 1);
     };
     /**
      * Opens SearchTab and pass the query to it
      */
-    vm.search = function() {
+    vm.search = function () {
         vm.showSearch = false;
         vm.tabs.push(getSearchTab(vm.query));
         vm.selectedTab = vm.tabs.length - 1;
@@ -266,15 +274,16 @@ module.exports = function ($scope,
      * Sidenav toggle
      * @todo it should be app's part
      */
-    vm.toggleSidenav = function() {
+    vm.toggleSidenav = function () {
         $mdSidenav('left')
             .toggle();
     };
+
     /**
      * Switch tab at index
      * @param {Number} index
      */
-    vm.selectTab = function(index) {
+    vm.selectTab = function (index) {
         console.log(index);
         vm.selectedTab = index;
         applyTabState();
@@ -283,13 +292,13 @@ module.exports = function ($scope,
      * Closes the tab at the index and loses it's state
      * @param {Number} index
      */
-    vm.closeTab = function(index) {
+    vm.closeTab = function (index) {
         vm.tabs.splice(index, 1);
         vm.selectedTab--;
         applyTabState();
     };
 
-    $scope.$on('openSubforum', function(event, subforum) {
+    $scope.$on('openSubforum', function (event, subforum) {
         var tab = getSubforumTab(subforum);
         if (sameTab) {
             vm.tabs[vm.selectedTab] = tab;

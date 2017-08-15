@@ -1,21 +1,24 @@
-<div>
-    <md-card-title-media>
-        <img src="app/images/music.png" class="md-media-sm card-img">
-    </md-card-title-media>
+<div class="md-padding"
+     style="overflow:hidden;"
+     layout="row">
+    <div ng-mouseover="switchIcon(PLAY_ICON)"
+         ng-mouseleave="switchIcon(DEFAULT_ICON)"
+         layout="row"
+         flex="8"
+         ng-click="play($event)"
+         layout-align="start center">
+        <ng-md-icon style="fill: grey" options='{"rotation":"none", "duration":"375"}'
+                    icon="{{currentIcon}}"></ng-md-icon>
+    </div>
+    <div flex="5"></div>
+    <div flex="84"
+         ng-mouseover="switchIcon(INFO_ICON)"
+         ng-mouseleave="switchIcon(DEFAULT_ICON)"
+         layout="column">
+        <div flex="55" class="md-caption torrentTitle"><b>{{ ::entry.topic_title}}</b></div>
 
-    <md-card-title>
-        <md-card-title-text class="card-title-text">
-            <span><i>{{ ::entry.topic_title.substr(0,60) }}...</i></span>
-        </md-card-title-text>
-    </md-card-title>
-    <md-card-content>
-        <span class="md-caption">Audio</span>
-        <p class="md-caption">Seeders: {{ ::entry.seeders }}<br>Size: {{ ::(entry.size / 1024 / 1024).toFixed(2)}} MB</p>
-    </md-card-content>
-    <md-card-actions layout="row" layout-align="end center">
-        <md-button ng-click="play()">
-            <md-icon ng-md-icon flex="10" class="md-icon-button" icon="play_circle_outline" flex="40"></md-icon>
-            <span flex="90">Play</span>
-        </md-button>
-    </md-card-actions>
+        <div flex="25" class="md-caption" style="white-space: nowrap;">{{'SEEDERS' | translate}}: {{ ::entry.seeders }} {{'SIZE' |
+            translate}}: {{ ::(entry.size / 1024 / 1024).toFixed(2)}} MB
+        </div>
+    </div>
 </div>

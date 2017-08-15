@@ -1,23 +1,26 @@
-<div class="md-padding" layout="column" layout-align="center center" layout-fill="layout-fill">
-    <div layout="column" class="loginBox md-whiteframe-z1">
+<div class="md-padding" layout="column" layout-align="center center">
+    <div class="loginBox md-whiteframe-z1">
         <md-toolbar>
-            <h2 class="md-toolbar-tools"><span>Login</span></h2>
+            <h2 class="md-toolbar-tools"><span>{{'LOG_IN' | translate}}</span></h2>
         </md-toolbar>
-        <md-content layout="column" class="md-padding">
-            <md-input-container>
-                <label>Login</label>
-                <input type="text" ng-model="username"/>
+        <md-content layout="column">
+            <md-input-container class="md-block">
+                <label style="margin-left: 50px">{{'LOGIN' | translate}}</label>
+                <p layout="row"><ng-md-icon icon="account_circle" size="33"></ng-md-icon>
+                    <input class="inputs" type="text" ng-model="username"/></p>
+
             </md-input-container>
-            <md-input-container>
-                <label>Password</label>
-                <input type="password" ng-model="password"/>
+            <md-input-container class="md-block">
+                <label style="margin-left: 50px">{{'PASSWORD' | translate}}</label>
+                <p layout="row"><ng-md-icon icon="lock" size="33"></ng-md-icon>
+                    <input class="inputs" type="password" ng-model="password"/></p>
             </md-input-container>
             <div layout="row" layout-align="center center" style="padding-top:20px;">
-                <md-button ng-click="login()" class="md-raised md-primary">Login</md-button>
+                <md-button ng-click="login()" class="md-raised md-primary inputs">{{'LOG_IN' | translate}}</md-button>
                 <div flex="flex"></div>
-                <md-button ui-sref="app.browse" md-no-ink="md-no-ink">As guest</md-button>
+                <md-button class="inputs" ui-sref="app.browse" md-no-ink="md-no-ink">{{'AS_GUEST' | translate}}</md-button>
             </div>
-                    <p class="md-caption">Guests has no search feature and lower speed</p>
+                    <p class="md-caption">{{'NO_FEATURE_FOR_GUESTS' | translate}}</p>
         </md-content>
     </div>
 </div>

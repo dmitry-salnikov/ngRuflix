@@ -9,7 +9,7 @@
  * @constructor
  * @export
  */
-module.exports = function ($scope, $stateParams, Loki) {
+export default function ($scope, $stateParams, Loki) {
     'use strict';
 
     /**

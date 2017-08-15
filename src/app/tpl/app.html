@@ -3,28 +3,51 @@
                 md-is-locked-open="$mdMedia('gt-md') && !vm.unlockLeftBar">
         <md-toolbar class="md-hue-2">
             <div ng-if="!$root.offlineMode && vm.username" layout="column" class="md-toolbar-tools-bottom inset">
-                <span>Logged as <strong>{{::vm.username}}</strong></span>
+                <span>{{'LOGGED' | translate}} <strong>{{::vm.username}}</strong></span>
             </div>
             <div ng-if="!$root.offlineMode && !vm.username" layout="column" class="md-toolbar-tools-bottom inset">
-                <span>Logged as Guest</span>
+                <span>{{'LOGGED_AS_GUEST' | translate}}</span>
             </div>
             <div layout="column" ng-if="$root.offlineMode" class="md-toolbar-tools-bottom inset">
-                <span style="color:yellow">Offline mode</span>
+                <span style="color:yellow">{{'OFFLINE' | translate}}</span>
             </div>
         </md-toolbar>
         <md-list>
-            <md-item ng-if="!$root.offlineMode" ui-sref="app.browse">
+            <md-list-item ng-if="!$root.offlineMode" ui-sref="app.browse.dashboard">
                     <md-item-content md-ink-ripple layout="row" layout-align="start center">
                         <div class="inset">
                             <ng-md-icon icon="subscriptions"></ng-md-icon>
                         </div>
-                        <div class="inset">Browse
+                        <div class="inset">{{'BROWSE' | translate}}
                         </div>
                     </md-item-content>
-            </md-item>
+            </md-list-item>
             <md-divider></md-divider>
+            <md-list-item ng-if="vm.likesRouteVisibile" ui-sref="app.browse.liked">
+                <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                    <div class="inset">
+                        <ng-md-icon icon="favorite" style="fill: pink"></ng-md-icon>
+                    </div>
+                    <div class="inset">{{'LIKED' | translate}}
+                    </div>
+                </md-item-content>
+            </md-list-item>
+            <md-divider></md-divider>
+            <md-list-item ui-sref="app.settings">
+                <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                    <div class="inset">
+                        <ng-md-icon icon="settings"></ng-md-icon>
+                    </div>
+                    <div class="inset">{{'SETTINGS' | translate}}
+                    </div>
+                </md-item-content>
+            </md-list-item>
             <md-divider></md-divider>
         </md-list>
+    </md-sidenav>
+    <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="torrent-info-sidenav">
+        <torrent-info entry="vm.torrentInfoEntry">
+        </torrent-info>
     </md-sidenav>
     <div layout="column" flex>
         <md-content class="no-padding" layout="column" flex ui-view></md-content>

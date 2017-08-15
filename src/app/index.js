@@ -16,29 +16,42 @@ import 'angular-material/angular-material.css';
 import 'roboto-fontface/css/roboto/roboto-fontface.css';
 import 'angular-material-icons';
 import 'angular-loading-bar';
+import 'angular-translate';
+import 'angular-translate-loader-static-files';
 import './auth';
 import './player';
 import './browse';
+import toLowerCaseFilter from './filters/toLowerCase';
 
 import SplashScreenController from './controllers/SplashScreenController';
 import AppController from './controllers/AppController';
 import APP_EVENTS from './controllers/AppController';
 
-const app = angular.module('app', [
-            'ui.router',
-            'ngMaterial',
-            'ngMdIcons',
-            'angular-loading-bar',
-            'ngAnimate',
-            'app.common',
-            'app.player',
-            'app.browse',
-            'app.auth'])
-        .config(require('./Routing'))
-        .run(function($location) {
-            $location.url('/splash');
-        });
-
+let app = angular.module('app', [
+    'ui.router',
+    'ngMaterial',
+    'ngMdIcons',
+    'angular-loading-bar',
+    'ngAnimate',
+    'pascalprecht.translate',
+    'app.common',
+    'app.player',
+    'app.browse',
+    'app.auth'])
+    .config(require('./Routing'))
+    .config(($translateProvider) => {
+        $translateProvider
+            .registerAvailableLanguageKeys(['en_US', 'pl_PL'])
+            .preferredLanguage('pl_PL')
+            .useStaticFilesLoader({
+                prefix: 'app/i18n/locale-',
+                suffix: '.json'
+            })
+            .forceAsyncReload(true)
+            .fallbackLanguage('en_US');
+    })
+    .run(($location) => $location.url('/splash'));
+app.filter('toLowerCase', toLowerCaseFilter);
 app.controller('SplashScreenController', SplashScreenController);
 app.controller('AppController', AppController);
 app.constant('APP_EVENTS', APP_EVENTS);

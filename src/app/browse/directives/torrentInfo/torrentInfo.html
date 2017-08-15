@@ -1,0 +1,46 @@
+<md-toolbar>
+    <div class="md-toolbar-tools" ng-show="entry.type === 'music'"><h2>{{'TORRENT_INFO' | translate}} {{'MUSIC_LOC' |
+        translate | toLowerCase}}</h2></div>
+    <div class="md-toolbar-tools" ng-show="entry.type === 'video'"><h2>{{'TORRENT_INFO' | translate}} {{'MOVIE_LOC' |
+        translate | toLowerCase}}</h2></div>
+</md-toolbar>
+<md-tabs md-dynamic-height md-border-bottom>
+
+    <md-tab label="{{'GENERAL' | translate}}">
+        <md-tab-label>{{'GENERAL' | translate}}</md-tab-label>
+        <md-tab-body>
+            <div layout="column" layout-padding>
+                <div>
+                    {{'NAME' | translate}}: <b>{{entry.topic_title}}</b>
+                </div>
+                <div>
+                    {{'SEEDERS' | translate}}: {{entry.seeders}}
+                </div>
+                <div>
+                    {{'SIZE' | translate}}: {{(entry.size / 1024 / 1024).toFixed(2)}} MB
+                </div>
+            </div>
+        </md-tab-body>
+    </md-tab>
+    <md-tab label="{{'FILES' | translate}}">
+        <md-tab-label>{{'FILES' | translate}}</md-tab-label>
+        <md-tab-body>
+            <md-list>
+                <md-list-item class="cursor" md-ink-ripple layout="row" layout-align="start center" ng-repeat="item in files | orderBy:'name'">
+                    <md-item-content>
+                        <p>{{$index+1}}. {{item.name}}</p>
+                    </md-item-content>
+                    <md-divider></md-divider>
+                </md-list-item>
+            </md-list>
+        </md-tab-body>
+    </md-tab>
+</md-tabs>
+<md-divider></md-divider>
+<md-button class="md-fab md-primary md-hue-2" ng-click="play()">
+    <md-icon ng-md-icon icon="play_arrow"></md-icon>
+</md-button>
+<md-button class="md-fab md-mini" ng-click="toggleLike()">
+    <md-icon ng-show="liked" ng-md-icon icon="favorite"></md-icon>
+    <md-icon ng-show="!liked" ng-md-icon icon="favorite_border"></md-icon>
+</md-button>

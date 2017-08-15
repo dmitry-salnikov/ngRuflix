@@ -1,44 +1,46 @@
 <md-toolbar ng-show="!vm.showSearch">
-    <div class="md-toolbar-tools">
+    <div class="md-toolbar-tools tool">
         <md-button ng-click="vm.toggleSidenav()" hide-gt-md aria-label="Menu">
             <md-icon ng-md-icon style="fill:white" icon="menu"></md-icon>
         </md-button>
         <h2>
-            {{vm.tabs[selectedTab].name}}
+            {{::vm.tabs[selectedTab].name | translate}}
         </h2>
         <span flex></span>
-        <md-button aria-label="Search" ng-click="vm.showSearch = ! vm.showSearch">
+        <md-button aria-label="Search" ng-click="vm.showSearch = ! vm.showSearch" class="searchButton">
             <md-icon ng-md-icon style="fill:white" icon="search"></md-icon>
         </md-button>
     </div>
-    <md-tabs md-stretch-tabs="always" md-selected="selectedTab">
-        <md-tab ng-click="vm.selectTab($index)" ng-repeat="tab in vm.tabs" id="tab{{vm.selectedTab}}"
+    <md-tabs md-stretch-tabs="always" md-selected="vm.selectedTab">
+        <md-tab ng-click="vm.selectTab($index)" ng-repeat="tab in vm.tabs" id="tab{{::vm.selectedTab}}"
                 aria-controls="tab{{::selectedTab}}-content">
-                <div layout="row">
-                    <span flex="85">{{::tab.name}}</span>
-                    <a class="cursor" ng-if="tab.closable" flex ng-click="vm.closeTab($index)">
-                        <md-icon ng-md-icon icon="close"></md-icon>
-                    </a>
-                </div>
+            <div layout="row">
+                <span flex="85">{{::tab.name | translate}}</span>
+                <a class="cursor" ng-if="tab.closable" flex ng-click="vm.closeTab($index)">
+                    <md-icon ng-md-icon icon="close"></md-icon>
+                </a>
+            </div>
         </md-tab>
     </md-tabs>
 </md-toolbar>
-<md-toolbar class="md-hue-1" ng-show="vm.showSearch">
-    <div class="md-toolbar-tools">
-        <md-button ng-click="vm.showSearch = !vm.showSearch" aria-label="Back">
-            <md-icon ng-md-icon style="fill:white" icon="arrow_back"></md-icon>
-        </md-button>
-        <h2 flex="10">
-            Back
-        </h2>
-        <md-input-container md-theme="input" flex>
-            <label>&nbsp;</label>
-            <input ng-model="vm.query" placeholder="enter query">
-        </md-input-container>
-        <md-button aria-label="Search" ng-click="vm.search()">
-            <md-icon ng-md-icon style="fill:white" icon="search"></md-icon>
-        </md-button>
-    </div>
+    <md-toolbar class="md-hue-1" ng-show="vm.showSearch">
+<md-content layout-gt-sm="row" class="toolbarContent">
+        <div class="md-toolbar-tools">
+            <md-button ng-click="vm.showSearch = !vm.showSearch" aria-label="Back">
+                <md-icon ng-md-icon style="fill:white" icon="arrow_back"></md-icon>
+            </md-button>
+            <form ng-submit="vm.search()" layout="row" flex>
 
-</md-toolbar>
+                <md-input-container class="md-block" style="margin-bottom: 0px" flex>
+                    <input ng-model="vm.query" placeholder="{{'ENTER_QUERY' | translate}}">
+                </md-input-container>
+
+                <md-button type="submit" aria-label="Search" class="searchButton" style="margin-right: -8px"
+                           ng-click="vm.initiateSearch()">
+                    <md-icon ng-md-icon style="fill:white" icon="search"></md-icon>
+                </md-button>
+            </form>
+        </div>
+</md-content>
+    </md-toolbar>
 <md-content flex ui-view></md-content>

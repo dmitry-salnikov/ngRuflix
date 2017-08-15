@@ -14,7 +14,7 @@ import LokiIndexedAdapter from 'lokijs/build/loki-indexed-adapter.min';
 module.exports = function ($q) {
     'use strict';
     var db = {};
-    var feed, categories, forums, langs, lastSync;
+    var feed, categories, forums, langs, lastSync, likes;
 
 
     function onDBLoaded(callback) {
@@ -28,6 +28,8 @@ module.exports = function ($q) {
             db.addCollection('langs', {unique: ['id']});
         lastSync = db.getCollection('lastSync') ||
             db.addCollection('lastSync');
+        likes = db.getCollection('likes') ||
+            db.addCollection('likes', {unique: ['id']});
         console.log('LokiJS ready');
         callback();
     }
@@ -87,6 +89,13 @@ module.exports = function ($q) {
          */
         getLangsDTO: function() {
             return langs;
+        },
+        /**
+         * Get likes
+         * @returns {*}
+         */
+        getLikesDTO: function() {
+            return likes;
         }
     };
 };

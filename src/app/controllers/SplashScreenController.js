@@ -34,7 +34,7 @@ export default function (Bootstrap,
     function onError(e) {
         console.error('Error', e.message);
         console.error(e.stack);
-        //$state.go('app.browse');
+        $state.go('app.browse');
     }
 
     /**

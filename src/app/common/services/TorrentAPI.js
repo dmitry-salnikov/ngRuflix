@@ -1,7 +1,7 @@
 /**
-* TCD Software
-* Created by Dmitrij Rysanow on 08.02.17.
-*/
+ * TCD Software
+ * Created by Dmitrij Rysanow on 08.02.17.
+ */
 /**
  * Provide access to node's TorrentManagment interface
  *
@@ -15,6 +15,7 @@
 module.exports = function ($http, RutrackerAPI, ConfigStore) {
     var _APIendpoint = RutrackerAPI.getEndpoint() + '/torrentapi';
     var _mediaEndpoint = 'http://' + ConfigStore.get().hostname + ':9999';
+
     /**
      * Generates random whole number to avoid any caching
      * @param {number} min
@@ -26,17 +27,21 @@ module.exports = function ($http, RutrackerAPI, ConfigStore) {
     }
 
     return {
-        addTorrentByHash: function(torrent) {
+        addTorrentByHash: function (torrent) {
             return $http.get(_APIendpoint + '/add/' +
                 torrent + '?r=' + getRandomInt(0, 65000));
         },
-        addTorrentByRutrackerId: function(id) {
+        addTorrentByRutrackerId: function (id) {
             return $http.get(_APIendpoint + '/addFile/' + id +
                 '?r=' + getRandomInt(0, 65000));
         },
-        getMediaLink: function(index) {
+        getMediaLink: function (index) {
             return _mediaEndpoint + '/' + index +
                 '?r=' + getRandomInt(0, 65000);
+        },
+        getMetadata: function (index) {
+            return $http.get(_APIendpoint + '/getMetadata/' + index +
+                '?r=' + getRandomInt(0, 65000));
         }
     };
-}
+};

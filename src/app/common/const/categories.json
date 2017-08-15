@@ -1,0 +1,91 @@
+{
+  "GROUPS": [
+    {
+      "id": 0,
+      "name": "MUSIC"
+    },
+    {
+      "id": 1,
+      "name": "MOVIES"
+    }
+  ],
+  "CATEGORIES": [
+    {
+      "id": 35,
+      "groupID": 0,
+      "transID": 0
+    }
+  ],
+  "FORUMS": [
+    {
+      "id": 2495,
+      "catID": 35,
+      "transID": 1
+    },
+    {
+      "id": 2497,
+      "catID": 35,
+      "transID": 0
+    },
+    {
+      "id": 2499,
+      "catID":  35,
+      "text": "Eurodance, Disco, Hi-NRG"
+    }
+  ],
+  "TRANSLATIONS": [
+    {
+      "id": 0,
+      "tag": "POP_MUSIC",
+      "translations": [
+        {
+          "langID": 1,
+          "text": "Muzyka popularna"
+        },
+        {
+          "langID": 2,
+          "text": "Pop music"
+        },
+        {
+          "langID": 3,
+          "text": "Популярная музыка"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "tag": "RUSSIAN_MUSIC",
+      "translations": [
+        {
+          "langID": 1,
+          "text": "Rosyjski POP"
+        },
+        {
+          "langID": 2,
+          "text": "Russian pop music"
+        },
+        {
+          "langID": 3,
+          "text": "Отечественная поп-музыка"
+        }
+      ]
+    }
+  ],
+  "LANGUAGES": [
+    {
+      "id": 1,
+      "name": "Polski",
+      "tag": "pl_PL"
+    },
+    {
+      "id": 2,
+      "name": "English (United States)",
+      "tag": "en_US"
+    },
+    {
+      "id": 3,
+      "name": "Русский",
+      "tag": "ru_RU"
+    }
+  ]
+}

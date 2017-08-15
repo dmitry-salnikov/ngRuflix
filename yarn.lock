@@ -58,7 +58,7 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
-angular-animate@^1.6.4:
+angular-animate@^1.6.5:
   version "1.6.5"
   resolved "https://registry.yarnpkg.com/angular-animate/-/angular-animate-1.6.5.tgz#3817c75880d05fc899a6c8d4b09d1cc62a71e93a"
 
@@ -84,7 +84,13 @@ angular-mocks@^1.5.0:
   version "1.6.5"
   resolved "https://registry.yarnpkg.com/angular-mocks/-/angular-mocks-1.6.5.tgz#c62f8014cc6d3ed3fd1b383a634ca0009af3efee"
 
-angular-translate@^2.15.1:
+angular-translate-loader-static-files@^2.15.2:
+  version "2.15.2"
+  resolved "https://registry.yarnpkg.com/angular-translate-loader-static-files/-/angular-translate-loader-static-files-2.15.2.tgz#38f27b0dfd8b631b8ce8b3e0f06aa3f1311105e9"
+  dependencies:
+    angular-translate "~2.15.2"
+
+angular-translate@^2.15.2, angular-translate@~2.15.2:
   version "2.15.2"
   resolved "https://registry.yarnpkg.com/angular-translate/-/angular-translate-2.15.2.tgz#f9a3c2b8d5daeb7d76c9e2c01ff3c3d57fe12b90"
   dependencies:
@@ -2428,6 +2434,10 @@ globals@^9.0.0:
 graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.1.9:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
+
+gsap@^1.20.2:
+  version "1.20.2"
+  resolved "https://registry.yarnpkg.com/gsap/-/gsap-1.20.2.tgz#c78abd906c32ee21964c1b90f921b5110180c65a"
 
 handle-thing@^1.2.5:
   version "1.2.5"

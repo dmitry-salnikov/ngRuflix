@@ -2,7 +2,7 @@
  * TCD Software
  * Created by Dmitrij Rysanow on 02.03.17.
  */
-module.exports = function($stateProvider) {
+export default function ($stateProvider) {
     $stateProvider
         .state('app.browse', {
             url: '/browse',
@@ -41,5 +41,12 @@ module.exports = function($stateProvider) {
             controller: 'SearchTabController',
             controllerAs: 'vm',
             cache: true
-        });
+        })
+        .state('app.browse.liked', {
+            url: '/liked',
+            templateUrl: 'app/browse/tabs/LikedTab/liked.html',
+            controller: 'LikedController',
+            controllerAs: 'vm',
+            cache: false
+        })
 };

@@ -25,6 +25,6 @@ module.exports = function ($stateParams, RutrackerAPI) {
     function populateList(response) {
         vm.torrentItems = response;
     }
-    init();
-}
 
+    init();
+};

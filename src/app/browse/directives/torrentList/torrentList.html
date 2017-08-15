@@ -1,0 +1,9 @@
+<md-content md-scroll-y class="md-padding" layout-wrap layout-xs="column" layout="row" ng-cloak>
+    <torrent-item-card flex-sm="33" flex-gt-sm="25" flex
+                       ng-if="item.type !== 'unknown'"
+                       ng-repeat="item in items track by $index"
+                       ng-click="openInfo(item)"
+                       ng-class="{'torrentSelected':selectedItem.id === item.id}"
+                       entry="item" class="torrentItem listIn">
+    </torrent-item-card>
+</md-content>
