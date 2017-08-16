@@ -2,7 +2,8 @@
  * @interface
  * @export
  */
-function IAbstractPlayerListener() {}
+
+export default function IAbstractPlayerListener() {}
 /**
  * Calls when Player activates
  */
@@ -13,5 +14,3 @@ IAbstractPlayerListener.prototype.activate = function() {};
  * @param {*} status
  */
 IAbstractPlayerListener.prototype.updateStatus = function(status) {};
-
-module.exports = IAbstractPlayerListener;

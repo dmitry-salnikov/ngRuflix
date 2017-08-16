@@ -1,3 +1,0 @@
-[submodule "src/app/player/deps/angular-popover"]
-	path = src/app/player/deps/angular-popover
-	url = https://github.com/FauzanKhan/angular-popover.git

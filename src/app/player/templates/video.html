@@ -5,13 +5,52 @@
                 <md-icon ng-md-icon icon="menu" style="fill:black"></md-icon>
             </md-button>
         </div>
-        <h3>Video</h3>
+        <h3>{{'VIDEO' | translate}}</h3>
         <span flex></span>
         <md-button ng-click="vm.back()">
             <md-icon ng-md-icon icon="keyboard_arrow_down" style="fill:black"></md-icon>
+        </md-button>
+        <md-button ng-click="vm.toggleOptions()">
+            <md-icon ng-md-icon icon="list" style="fill:black"></md-icon>
         </md-button>
     </div>
 </md-toolbar>
 <md-content>
     <video class="videoInsert" id="video"></video>
 </md-content>
+<md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
+    <md-toolbar class="md-theme-light">
+        <h1 class="md-toolbar-tools">Options</h1>
+    </md-toolbar>
+    <md-tabs md-dynamic-height>
+        <md-tab label="Informations">
+            <div class="md-content md-padding">
+                <div style="word-wrap: normal"><span class="md-caption">Track name: <b>{{playerStatus.getCurrentTrack().name}}</b></span></div>
+                <div><span class="md-caption">File size: <b>{{(playerStatus.getCurrentTrack().length / 1024)}} KB</b></span></div>
+                <div><span class="md-caption">File mimetype: <b>{{playerStatus.getCurrentTrack().mime}}</b></span></div>
+            </div>
+        </md-tab>
+        <md-tab ng-if="vm.captions.length > 0" label="Subtitles">
+            <div class="md-padding">
+                <md-list>
+                    <md-list-item ng-repeat="caption in vm.captions">
+                        <div class="md-caption">
+                            {{caption.language}}
+                        </div>
+                    </md-list-item>
+                </md-list>
+            </div>
+        </md-tab>
+        <md-tab ng-if="vm.playlist.length > 0" label="Files">
+            <div class="md-padding">
+                <md-list>
+                    <md-list-item ng-click="vm.playTrack($index)" ng-repeat="item in vm.playlist track by item.id">
+                        <div class="md-caption">
+                            <i ng-class="{'current-track': item.id === playerStatus.getCurrentTrack().id}">{{item.name}}</i>
+                        </div>
+                    </md-list-item>
+                </md-list>
+            </div>
+        </md-tab>
+    </md-tabs>
+</md-sidenav>
