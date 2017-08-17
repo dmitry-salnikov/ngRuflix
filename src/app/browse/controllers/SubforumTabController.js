@@ -24,7 +24,8 @@ module.exports = function ($stateParams, RutrackerAPI) {
     vm.getMore = function() {
         RutrackerAPI.getTorrentsInSubforum($stateParams.id,
             vm.torrentList.length)
-            .then(onResult);
+            .then(onResult, (err) => console.error(err));
     };
     vm.getMore();
-}
+};
+

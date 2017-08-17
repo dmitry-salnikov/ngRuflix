@@ -14,7 +14,7 @@
  */
 module.exports = function ($http, RutrackerAPI, ConfigStore) {
     var _APIendpoint = RutrackerAPI.getEndpoint() + '/torrentapi';
-    var _mediaEndpoint = 'http://' + ConfigStore.get().hostname + ':9999';
+    var _mediaEndpoint = 'http://localhost:9999';
 
     /**
      * Generates random whole number to avoid any caching

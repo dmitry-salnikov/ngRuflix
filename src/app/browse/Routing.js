@@ -12,7 +12,7 @@ export default function ($stateProvider) {
         })
         .state('app.browse.category', {
             url: '/category/:id',
-            templateUrl: 'app/browse/tabs/CategoryTab/category.html',
+            templateUrl: 'app/browse/tpl/category.html',
             controller: 'CategoryTabController',
             controllerAs: 'vm',
             params: {
@@ -30,22 +30,22 @@ export default function ($stateProvider) {
         })
         .state('app.browse.subforum', {
             url: '/subforum/:id',
-            templateUrl: 'app/browse/tabs/SubforumTab/subforum.html',
+            templateUrl: 'app/browse/tpl/subforum.html',
             controller: 'SubforumTabController',
             controllerAs: 'vm',
             cache: true
         })
         .state('app.browse.search', {
             url: '/search/:query',
-            templateUrl: 'app/browse/tabs/SearchTab/search.html',
+            templateUrl: 'app/browse/tpl/search.html',
             controller: 'SearchTabController',
             controllerAs: 'vm',
             cache: true
         })
         .state('app.browse.liked', {
             url: '/liked',
-            templateUrl: 'app/browse/tabs/LikedTab/liked.html',
-            controller: 'LikedController',
+            templateUrl: 'app/browse/tpl/liked.html',
+            controller: 'LikedTabController',
             controllerAs: 'vm',
             cache: false
         })

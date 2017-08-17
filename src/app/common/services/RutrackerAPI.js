@@ -91,7 +91,7 @@ module.exports = function ($http, $q, Utils) {
                     .sortBy(function (item) {
                         return -item.seeders;
                     })
-                    ._wrapped
+                    .values()
                     .slice(skip, (TORRENTS_AT_ONCE + skip))
                     .map(function (item) {
                         return item.id;

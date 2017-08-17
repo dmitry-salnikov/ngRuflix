@@ -18,6 +18,7 @@ import DashboardTabController from './controllers/DashboardTabController';
 import LikedTabController from './controllers/LikedTabController';
 import SearchTabController from './controllers/SearchTabController';
 import SubforumTabController from './controllers/SubforumTabController';
+import categoryView from './directives/categoriesView/categoryView';
 import Routing from './Routing';
 import 'gsap/CSSPlugin';
 
@@ -38,9 +39,10 @@ app.directive('torrentInfo', torrentInfo);
  * reads type parameter and compiles musicItem or videoItem
  */
 app.directive('torrentItemCard', torrentItemCard);
-app.directive('musicItem', MusicItem);
-app.directive('videoItem', VideoItem);
+app.directive('musicitem', MusicItem);
+app.directive('videoitem', VideoItem);
 app.directive('torrentList', torrentList);
+app.directive('categoryView', categoryView);
 
 /**
  * BrowseController - Browser view - with searchbar and tabs system

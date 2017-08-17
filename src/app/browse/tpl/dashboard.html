@@ -1,7 +1,9 @@
-<div class="inset" hide-sm></div>
-<md-content md-scroll-y class="md-padding" layout-wrap layout-xs="column" layout="row">
-    <torrent-item class="torrentItem" flex-sm="33" flex-gt-sm="25" flex
-                  ng-repeat="item in vm.torrentItems track by $index"
-                  entry="item">
-    </torrent-item>
-</md-content>
+<div ng-if="vm.likes.length > 0">
+    <h3>{{'LIKES' | translate }}</h3>
+    <md-divider></md-divider>
+    <torrent-list items="vm.likes"></torrent-list>
+    <md-button ng-if="vm.likes.length > 10" md-no-ink class="md-primary" ng-click="vm.getMore()">Get more</md-button>
+</div>
+<h3>{{ 'NEWEST' | translate }}</h3>
+<md-divider></md-divider>
+<torrent-list items="vm.torrentItems"></torrent-list>

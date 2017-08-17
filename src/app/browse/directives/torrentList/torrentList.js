@@ -13,7 +13,7 @@ export default function ($rootScope) {
         scope: {
             items: '='
         },
-        templateUrl: 'app/common/directives/torrentList/torrentList.html',
+        templateUrl: 'app/browse/directives/torrentList/torrentList.html',
         link: function(scope) {
             /**
              * Sidebar for displaying torrent info

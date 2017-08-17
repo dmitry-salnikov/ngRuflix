@@ -13,7 +13,7 @@ export default function (PlayerService) {
     return {
         restrict: 'A',
         scope: '&',
-        templateUrl: 'src/app/browse/directives/torrentItems/musicItem/musicitem.html',
+        templateUrl: 'app/browse/directives/torrentItems/musicItem/musicitem.html',
         link: function(scope, element, attr) {
             scope.DEFAULT_ICON = 'music_note';
             scope.PLAY_ICON = 'play_arrow';
