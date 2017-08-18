@@ -2,6 +2,7 @@
  * TCD Software
  * Created by Dmitrij Rysanow on 02.03.17.
  */
+import angular from 'angular';
 import '../../../node_modules/fzn-angular-popover/dist/css/ngpopover.css';
 import '../../../node_modules/fzn-angular-popover/src/js/ngPopover';
 import PlayerService from './services/PlayerService';
