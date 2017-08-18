@@ -97,7 +97,7 @@ export default function PlayerService(TorrentAPI,
         playerStatus.statusText = PLAYING_STATUS.PLAYING;
         setPlayerEvents();
 
-        console.log('Playing', playerStatus.getCurrentTrack().name);
+        console.log('Playing', playerStatus.getCurrentTrack());
     }
 
     function prepareChangeStream() {

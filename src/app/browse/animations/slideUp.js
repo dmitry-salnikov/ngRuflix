@@ -11,7 +11,7 @@ export default function() {
             }
             TweenLite.fromTo(element, 0.5, {x: -100},
                 {
-                    autoAlpha:0,
+                    autoAlpha:1,
                     x:0,
                     onComplete: done
                 });

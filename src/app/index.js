@@ -15,6 +15,8 @@ import 'angular-material';
 import 'angular-material/angular-material.css';
 import 'roboto-fontface/css/roboto/roboto-fontface.css';
 import 'angular-material-icons';
+import 'angular-animate';
+import 'svg-morpheus';
 import 'angular-loading-bar';
 import 'angular-translate';
 import 'angular-translate-loader-static-files';

@@ -3,16 +3,16 @@
         <div class="md-padding">
             <md-icon ng-md-icon icon="play_circle_outline"></md-icon>
         </div>
-        <h3 flex>Now playing</h3>
+        <h3 flex>{{'NOW_PLAYING' | translate}}</h3>
     </div>
 </md-toolbar>
 <md-content class="no-padding" flex>
-<!--playlist-->
+    <!--playlist-->
     <md-list>
-        <md-list-item ng-repeat="track in vm.list track by track.id">
+        <md-list-item ng-repeat="track in vm.playerStatus.playlist track by track.id">
             <md-button ng-click="vm.playTrack($index)" flex layout="start center">
                 <p class="md-caption">
-                    <i ng-class="{'current-track': $index === playerStatus.track.trackIndex}">{{$index+1}}.
+                    <i ng-class="{'current-track': track.id === playerStatus.getCurrentTrack().id}">{{$index+1}}.
                         {{track.name}}</i>
                 </p>
             </md-button>

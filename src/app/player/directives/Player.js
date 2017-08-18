@@ -90,7 +90,6 @@ export default function (PlayerService,
             function PlayerListener() {}
             PlayerListener.prototype.updateStatus = function(status) {
                 scope.playerStatus = status;
-                console.log(status);
                 if (status.getCurrentTrack() && !lockSlider) {
                     scope.position = status.position;
                 }

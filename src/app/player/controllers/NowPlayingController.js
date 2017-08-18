@@ -24,22 +24,24 @@ module.exports = function (PlayerService,
         PlayerService.addListener(PlayerListener);
     }
 
+    vm.back = function() {
+        $state.go(PreviousState.Name, PreviousState.Params);
+    };
+
+    $rootScope.$on(PLAYER_GLOBAL_CONTROLS.CLOSE_NOW_PLAYING, vm.back);
     /**
-     * @implements {IAbstractPlayer}
+     * @implements {IAbstractPlayerListener}
      * @constructor
      */
-    function PlayerListener() {
-    }
-
-    PlayerListener.prototype.updateStatus = function (status) {
+    function PlayerListener() {}
+    PlayerListener.prototype.updateStatus = function(status) {
         vm.playerStatus = status;
     };
-    PlayerListener.prototype.activate = function () {
+    PlayerListener.prototype.activate = function() {
 
     };
-
-    vm.back = function () {
-        $state.go(PreviousState.Name, PreviousState.Params);
+    PlayerListener.prototype.deactivate = function() {
+        vm.back();
     };
     $rootScope.$on(PLAYER_GLOBAL_CONTROLS.CLOSE_NOW_PLAYING, vm.back);
 
