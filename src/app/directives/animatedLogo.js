@@ -5,7 +5,7 @@ import TimelineMax from 'gsap';
 import 'gsap/EasePack';
 export default function() {
     return {
-        template: '<img src="/app/images/logo.png" class="logo">',
+        template: '<img src="/public/img/logo.png" class="logo">',
         restrict: 'E',
         transclude: true,
         link: function (scope, element) {

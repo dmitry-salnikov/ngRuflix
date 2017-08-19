@@ -23,7 +23,7 @@ import './auth';
 import './player';
 import './browse';
 import toLowerCaseFilter from './filters/toLowerCase';
-
+import animatedLogo from './directives/animatedLogo';
 import SplashScreenController from './controllers/SplashScreenController';
 import AppController from './controllers/AppController';
 import APP_EVENTS from './controllers/AppController';
@@ -57,6 +57,7 @@ let app = angular.module('app', [
             .fallbackLanguage('en_US');
     })
     .run(($location) => $location.url('/splash'));
+app.directive('animatedLogo', animatedLogo);
 app.filter('toLowerCase', toLowerCaseFilter);
 app.controller('SplashScreenController', SplashScreenController);
 app.controller('AppController', AppController);

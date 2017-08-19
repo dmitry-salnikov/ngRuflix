@@ -1,5 +1,7 @@
 <div class="splash-screen">
-    <h1 style="color:white">Ruflix</h1>
-    <p ng-show="vm.connectionProblem" style="color:yellow">Cannot connect to network. Offline mode</p>
-    <p ng-show="vm.error" style="color:red">Cannot run app due to bootstrap errors</p>
+    <img src="/public/img/ruflix.png" class="ruflix">
+    <animated-logo></animated-logo>
+    <p ng-show="vm.connectionProblem" style="color:yellow">{{'NETWORK_ERROR' | translate}}</p>
+    <p ng-show="vm.error" style="color:red">{{'ERROR' | translate}}</p>
+
 </div>
