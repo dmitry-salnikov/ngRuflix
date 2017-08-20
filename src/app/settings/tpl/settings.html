@@ -1,0 +1,20 @@
+<md-toolbar md-colors="{background: 'grey-A100'}">
+    <div class="md-toolbar-tools">
+        <md-button ng-click="vm.toggleSidenav()" hide-gt-md aria-label="Menu">
+            <md-icon ng-md-icon icon="menu"></md-icon>
+        </md-button>
+        <div class="md-padding">
+            <md-icon ng-md-icon icon="settings"></md-icon>
+        </div>
+        <h3 flex>{{'SETTINGS' | translate}}</h3>
+    </div>
+</md-toolbar>
+<md-content>
+        <div layout="row" layout-align="space-between center">
+            <span>{{'LANGUAGE' | translate}}</span>
+            <md-select ng-model="vm.currentLanguage">
+                <md-option ng-value="language.langkey" ng-repeat="language in vm.languages">{{ language.langname }}
+                </md-option>
+            </md-select>
+        </div>
+</md-content>

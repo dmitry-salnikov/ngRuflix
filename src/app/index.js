@@ -22,6 +22,7 @@ import 'angular-translate-loader-static-files';
 import './auth';
 import './player';
 import './browse';
+import './settings';
 import toLowerCaseFilter from './filters/toLowerCase';
 import animatedLogo from './directives/animatedLogo';
 import SplashScreenController from './controllers/SplashScreenController';
@@ -38,6 +39,7 @@ let app = angular.module('app', [
     'app.common',
     'app.player',
     'app.browse',
+    'app.settings',
     'app.auth'])
     .config(require('./Routing'))
     .config(($mdThemingProvider) => {
