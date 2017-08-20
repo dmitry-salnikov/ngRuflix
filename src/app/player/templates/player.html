@@ -1,10 +1,11 @@
 <script id="volume.html" type="text/ng-template">
-
-    <md-slider class="cursor" ng-model="volume"
-               min="1"
-               max="100"
-               step="1"
-               aria-label="volume" id="volume-slider" class="md-accent" md-vertical></md-slider>
+    <div ng-controller="volumeSliderController">
+        <md-slider class="cursor" ng-model="volume"
+                   min="1"
+                   max="100"
+                   step="1"
+                   aria-label="volume" id="volume-slider" class="md-accent" md-vertical></md-slider>
+    </div>
 
 </script>
 <div ng-if="enabled" class="slideUp">
@@ -54,10 +55,11 @@
 
             <div class="player-right" layout="end end" flex="10">
                 <div angular-popover layout="row" layout-align="center center"
-                     close-on-moueleave="true"
-                     close-on-click="true"
+                     close-on-mouseleave="true"
+                     close-on-click="false"
+                     ng-model="volume"
                      template-url="volume.html"
-                     mode="click"
+                     mode="mouseover"
                      direction="top" style="position:relative"
                      id="vol">
                     <md-button

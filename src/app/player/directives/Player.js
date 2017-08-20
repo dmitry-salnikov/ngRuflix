@@ -69,17 +69,13 @@ export default function (PlayerService,
                 }.bind(this));
             };
 
-            scope.closeVolume = function() {
-                //$timeout(ngPopoverFactory.close, 200);
+            scope.volumeSliderController = function($scope) {
+                $scope.$watch('volume', (newVal) => PlayerService.setVolume(newVal))
             };
 
             scope.fullscreen = function() {
                 $rootScope.$broadcast(PLAYER_GLOBAL_CONTROLS.OPEN_FULLSCREEN);
             };
-
-            scope.$watch('volume', function(newVal) {
-                PlayerService.setVolume(newVal);
-            });
 
             /**
              * @implements {IAbstractPlayer}
