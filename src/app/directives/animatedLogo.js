@@ -1,7 +1,7 @@
 /**
  * Created by tcd on 15.08.17.
  */
-import TimelineMax from 'gsap';
+import {TimelineMax} from 'gsap';
 import 'gsap/EasePack';
 export default function() {
     return {

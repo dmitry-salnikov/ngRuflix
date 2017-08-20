@@ -2,7 +2,7 @@
  * TCD Software
  * Created by Dmitrij Rysanow on 02.03.17.
  */
-module.exports = function($stateProvider) {
+export default function($stateProvider) {
             function passPreviousState($state) {
                 return {
                     Name: $state.current.name,

@@ -1,4 +1,13 @@
-<div ng-show="enabled" class="slideUp">
+<script id="volume.html" type="text/ng-template">
+
+    <md-slider class="cursor" ng-model="volume"
+               min="1"
+               max="100"
+               step="1"
+               aria-label="volume" id="volume-slider" class="md-accent" md-vertical></md-slider>
+
+</script>
+<div ng-if="enabled" class="slideUp">
     <md-toolbar md-no-ink class="player md-whiteframe-6dp">
         <div layout="container"
              ng-show="playerStatus.statusText === playingStatusEnum.PLAYING || playerStatus.statusText === playingStatusEnum.PAUSED">
@@ -43,20 +52,34 @@
                 </div>
             </div>
 
-            <div class="player-right" id="popover" layout="end end" flex="10">
-                <md-icon ng-popover="volume.html"
-                         trigger="popover"
-                         placement="top"
-                         id="vol"
-                         ng-md-icon
-                         icon="volume_up"></md-icon>
-                <md-button class="cursor no-padding" ng-if="currentState !== 'app.nowplaying' && currentState !== 'app.video'" ng-click="openNowPlaying()">
+            <div class="player-right" layout="end end" flex="10">
+                <div angular-popover layout="row" layout-align="center center"
+                     close-on-moueleave="true"
+                     close-on-click="true"
+                     template-url="volume.html"
+                     mode="click"
+                     direction="top" style="position:relative"
+                     id="vol">
+                    <md-button
+                            class="cursor no-padding"
+
+                    >
+                        <md-icon ng-md-icon icon="volume_up"></md-icon>
+                    </md-button>
+
+                </div>
+                <md-button class="cursor no-padding"
+                           ng-if="currentState !== 'app.nowplaying' && currentState !== 'app.video'"
+                           ng-click="openNowPlaying()">
                     <md-icon ng-md-icon icon="keyboard_arrow_up"></md-icon>
                 </md-button>
-                <md-button class="cursor no-padding" ng-if="currentState === 'app.nowplaying' || currentState === 'app.video'" ng-click="closeNowPlaying()">
+                <md-button class="cursor no-padding"
+                           ng-if="currentState === 'app.nowplaying' || currentState === 'app.video'"
+                           ng-click="closeNowPlaying()">
                     <md-icon ng-md-icon icon="keyboard_arrow_down"></md-icon>
                 </md-button>
-                <md-button class="cursor no-padding" ng-if="playerStatus.getCurrentTrack().mime.indexOf('video') > -1" ng-click="fullscreen()">
+                <md-button class="cursor no-padding" ng-if="playerStatus.getCurrentTrack().mime.indexOf('video') > -1"
+                           ng-click="fullscreen()">
                     <md-icon ng-md-icon icon="fullscreen"></md-icon>
                 </md-button>
             </div>
@@ -68,11 +91,4 @@
             </div>
         </div>
     </md-toolbar>
-    <script id="volume.html" type="text/ng-template">
-        <md-slider class="cursor" ng-model="volume" ng-mouseleave="closeVolume()"
-                   min="1"
-                   max="100"
-                   step="1"
-                   aria-label="volume" id="volume-slider" class="md-accent" md-vertical></md-slider>
-    </script>
 </div>

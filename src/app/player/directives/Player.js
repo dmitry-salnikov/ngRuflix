@@ -8,14 +8,12 @@ import {PLAYER_GLOBAL_CONTROLS} from "../services/PlayerService";
  * @ngInject
  * @param {PlayerService} PlayerService
  * @param {*} $state
- * @param {ngPopover} ngPopover
  * @param {!angular.scope} $rootScope
  * @param {!angular.timeout} $timeout
  * @return {angular.directive}
  */
 export default function (PlayerService,
                                $state,
-                               ngPopoverFactory,
                                $rootScope,
                                $timeout,
                                PLAYING_STATUS,
@@ -72,7 +70,7 @@ export default function (PlayerService,
             };
 
             scope.closeVolume = function() {
-                $timeout(ngPopoverFactory.close, 200);
+                //$timeout(ngPopoverFactory.close, 200);
             };
 
             scope.fullscreen = function() {

@@ -34,6 +34,7 @@
     "lodash": "^4.17.4",
     "lokijs": "^1.4.3",
     "ng-popover": "^2.0.0",
+    "path": "^0.12.7",
     "roboto-fontface": "^0.8.0",
     "svg-morpheus": "^0.3.0",
     "webpack-node-externals": "^1.6.0"
