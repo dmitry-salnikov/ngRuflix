@@ -43,6 +43,9 @@ Planned:
 
 - `npm install ngRuflix`
 - `npm start`
+- Go to `http://localhost:8080` and use your rutracker.org credentials for login, or use guest mode.
+
+Search feature is disabled for Guests, due to rutracker restrictions.
 
 There are some problems running multiple tasks on Windows.
 Run one command line and run
