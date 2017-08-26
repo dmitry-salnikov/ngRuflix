@@ -50,7 +50,7 @@ let app = angular.module('app', [
     .config(($translateProvider) => {
         $translateProvider
             .registerAvailableLanguageKeys(['en_US', 'pl_PL'])
-            .preferredLanguage('pl_PL')
+            .preferredLanguage('en_US')
             .useStaticFilesLoader({
                 prefix: 'app/i18n/locale-',
                 suffix: '.json'
