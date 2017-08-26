@@ -13,7 +13,7 @@ import {PLAYER_GLOBAL_CONTROLS} from '../services/PlayerService';
  * @constructor
  * @ngInject
  */
-module.exports = function (PlayerService,
+export default function (PlayerService,
                            PreviousState,
                            $state,
                            $rootScope) {

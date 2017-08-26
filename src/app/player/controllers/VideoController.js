@@ -11,7 +11,7 @@ import APP_EVENTS from '../../controllers/AppController';
  * @export
  * @constructor
  */
-module.exports = function (PlayerService,
+export default function (PlayerService,
                                           $scope,
                                           PreviousState,
                                           $state,
