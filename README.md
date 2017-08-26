@@ -19,6 +19,7 @@ Already works:
 
 In active development:
 - Player optimizations and functionalities
+- NWJS Windows/Mac/Linux builds
 
 Planned:
 - E-book reader
