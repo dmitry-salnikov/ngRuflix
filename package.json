@@ -1,6 +1,6 @@
 {
   "name": "ng-ruflix",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "ngRuflix is new front part of Ruflix.",
   "scripts": {
     "build": "rimraf dist && webpack --bail --progress --profile",
