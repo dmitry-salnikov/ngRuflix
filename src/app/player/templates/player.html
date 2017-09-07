@@ -37,7 +37,7 @@
                     <span style="margin-left:15px;padding-top:10px" class="md-caption oneLine">{{playerStatus.getCurrentTrack().name}}</span>
                     <div layout="row">
                         <div flex="15" flex-gt-sm="10" layout layout-align="center center">
-                            <span class="md-body-1 md-caption"><i>{{(position || 0) | playingTimeIndicator | date:'H:mm:ss'}}</i></span>
+                            <span class="md-body-1 md-caption"><i>{{(playerStatus.position || 0) | playingTimeIndicator | date:'H:mm:ss'}}</i></span>
                         </div>
                         <md-slider-container flex="auto">
                             <md-slider class="md-warn cursor"

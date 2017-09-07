@@ -63,10 +63,10 @@ export default function (PlayerService,
 
             scope.unlockPositionSlider = function() {
                 lockSlider = true;
-                PlayerService.setPosition(scope.position);
-                scope.$evalAsync(function() {
-                    lockSlider = false;
-                }.bind(this));
+                    PlayerService.setPosition(scope.position);
+                    scope.$evalAsync(function() {
+                        lockSlider = false;
+                    }.bind(this));
             };
 
             scope.volumeSliderController = function($scope) {
@@ -85,6 +85,7 @@ export default function (PlayerService,
             PlayerListener.prototype.updateStatus = function(status) {
                 scope.playerStatus = status;
                 if (status.getCurrentTrack() && !lockSlider) {
+                    console.log(status);
                     scope.position = status.position;
                 }
             };
