@@ -1,0 +1,154 @@
+{
+  "GROUPS": [
+    {
+      "id": 0,
+      "name": "MUSIC"
+    },
+    {
+      "id": 1,
+      "name": "MOVIES"
+    }
+  ],
+  "CATEGORIES": [
+    {
+      "id": 0,
+      "groupID": 0,
+      "transID": 0,
+      "name": "POP_MUSIC",
+      "forums": [
+        {
+          "id": 4297,
+          "text": "World pop music",
+          "transID": 3,
+          "subforums": [
+            {
+              "id": 428,
+              "text": "World pop music (lossless)",
+              "transID": 4
+            },
+            {
+              "id": 1362,
+              "text": "World pop music (lossless) (mixtapes)",
+              "transID": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "groupID": 0,
+      "transID": 2,
+      "name": "JAZZ/BLUES_MUSIC"
+    }
+  ],
+  "TRANSLATIONS": [
+    {
+      "id": 0,
+      "tag": "POP_MUSIC",
+      "translations": [
+        {
+          "langID": 1,
+          "text": "Muzyka popularna"
+        },
+        {
+          "langID": 2,
+          "text": "Pop music"
+        },
+        {
+          "langID": 3,
+          "text": "Популярная музыка"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "tag": "RUSSIAN_MUSIC",
+      "translations": [
+        {
+          "langID": 1,
+          "text": "Rosyjski POP"
+        },
+        {
+          "langID": 2,
+          "text": "Russian pop music"
+        },
+        {
+          "langID": 3,
+          "text": "Отечественная поп-музыка"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "tag": "JAZZ/BLUES_MUSIC",
+      "translations": [
+        {
+          "langID": 1,
+          "text": "Muzyka jazzowa"
+        },
+        {
+          "langID": 2,
+          "text": "Jazz/blues music"
+        },
+        {
+          "langID": 3,
+          "text": "Джазовая и Блюзовая музыка"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "tag": "WORLD_POP_MUSIC",
+      "translations": [
+        {
+          "langID": 1,
+          "text": "Światowa muzyka popularna"
+        },
+        {
+          "langID": 2,
+          "text": "World pop music"
+        },
+        {
+          "langID": 3,
+          "text": "Зарубежная поп-музыка"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "tag": "WORLD_POP_MUSIC_LOSSLESS",
+      "translations": [
+        {
+          "langID": 1,
+          "text": "Światowa muzyka popularna (jakość bezstratna)"
+        },
+        {
+          "langID": 2,
+          "text": "World pop music (lossless quality)"
+        },
+        {
+          "langID": 3,
+          "text": "Зарубежная поп-музыка (lossless)"
+        }
+      ]
+    }
+  ],
+  "LANGUAGES": [
+    {
+      "id": 1,
+      "name": "Polski",
+      "tag": "pl_PL"
+    },
+    {
+      "id": 2,
+      "name": "English (United States)",
+      "tag": "en_US"
+    },
+    {
+      "id": 3,
+      "name": "Русский",
+      "tag": "ru_RU"
+    }
+  ]
+}

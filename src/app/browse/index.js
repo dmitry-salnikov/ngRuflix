@@ -19,10 +19,11 @@ import LikedTabController from './controllers/LikedTabController';
 import SearchTabController from './controllers/SearchTabController';
 import SubforumTabController from './controllers/SubforumTabController';
 import categoryView from './directives/categoriesView/categoryView';
+import CategoriesHelper from './services/CategoriesHelper';
 import Routing from './Routing';
 import 'gsap/CSSPlugin';
 
-var angular = require('angular');
+import angular from 'angular';
 
 var app = angular.module('app.browse', [
         'ui.router',
@@ -66,5 +67,6 @@ app.controller('LikedTabController', LikedTabController);
  * SubforumTabController - tab for subforum chosen from CategoryTab
  */
 app.controller('SubforumTabController', SubforumTabController);
+app.factory('CategoriesHelper', CategoriesHelper);
 app.config(Routing);
 export default app;

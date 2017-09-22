@@ -11,13 +11,12 @@ export default function ($stateProvider) {
             controllerAs: 'vm'
         })
         .state('app.browse.category', {
-            url: '/category/:id',
+            url: '/category/{groupId:int}',
             templateUrl: 'app/browse/tpl/category.html',
             controller: 'CategoryTabController',
             controllerAs: 'vm',
             params: {
-                subCategories: [],
-                forums: []
+                groupId: 0
             },
             cache: true
         })
@@ -29,7 +28,7 @@ export default function ($stateProvider) {
             cache: true
         })
         .state('app.browse.subforum', {
-            url: '/subforum/:id',
+            url: '/subforum/{id:int}',
             templateUrl: 'app/browse/tpl/subforum.html',
             controller: 'SubforumTabController',
             controllerAs: 'vm',

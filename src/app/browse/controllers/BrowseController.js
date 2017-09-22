@@ -32,46 +32,14 @@ export default function ($scope,
      * @type {number}
      * @const
      */
-    var VIDEO_CAT = 2;
-
-    /**
-     * Documents and comedy category ID
-     * @type {number}
-     * @const
-     */
-    var DOCUMENTAL_AND_COMEDY = 20;
-
-    /**
-     * Sports category ID
-     * @type {number}
-     * @const
-     */
-    var SPORT = 28;
-
-    /**
-     * Series category ID
-     * @type {number}
-     * @const
-     */
-    var SERIES = 18;
-
-    var NON_RUSSIAN_MOVIES = 7;
-    var RUSSIAN_MOVIES = 22;
-    var ART_HOUSE = 124;
-    var THEATRE = 511;
-    var DVD_VIDEO = 93;
-    var HD_VIDEO = 2198;
-    var THREEDIMENSIONALMOVIES = 352;
-    var CARTOONS = 4;
-    var CARTOON_SERIES = 921;
-    var ANIME = 33;
+    const VIDEO_GROUP = 1;
 
     /**
      * Music category ID
      * @type {number}
      * @const
      */
-    var MUSIC_CAT = 8;
+    const MUSIC_GROUP = 0;
     /**
      * Pop music category ID
      * @type {number}
@@ -99,20 +67,6 @@ export default function ($scope,
      */
     var ELECTRONIC_MUSIC_CAT = 23;
 
-    /**
-     * Classical music forum ID
-     * @type {number}
-     * @const
-     */
-    var CLASSIC_MUSIC_FORUM = 409;
-    var FOLK_MUSIC_FORUM = 1125;
-    var NEWAGE_MUSIC_FORUM = 1849;
-    var HIPHOP_MUSIC_FORUM = 408;
-    var REGGAE_MUSIC_FORUM = 1760;
-    var SOUNDTRACK_MUSIC_FORUM = 416;
-    var CHANSON_MUSIC_FORUM = 1215;
-    var OTHER_MUSIC_FORUM = 413;
-
     vm.selectedTorrent = {};
 
     /**
@@ -130,47 +84,14 @@ export default function ($scope,
             name: 'MUSIC',
             route: 'app.browse.category',
             params: {
-                'id': MUSIC_CAT,
-                'subCategories': [
-                    POP_MUSIC_CAT,
-                    ROCK_MUSIC_CAT,
-                    JAZZBLUES_MUSIC_CAT,
-                    ELECTRONIC_MUSIC_CAT
-                ],
-                'forums': [
-                    CLASSIC_MUSIC_FORUM,
-                    FOLK_MUSIC_FORUM,
-                    NEWAGE_MUSIC_FORUM,
-                    HIPHOP_MUSIC_FORUM,
-                    REGGAE_MUSIC_FORUM,
-                    SOUNDTRACK_MUSIC_FORUM,
-                    CHANSON_MUSIC_FORUM,
-                    OTHER_MUSIC_FORUM
-                ]
+                'groupId': MUSIC_GROUP
             }
         },
         {
             name: 'MOVIES',
             route: 'app.browse.category',
             params: {
-                'id': VIDEO_CAT,
-                'subCategories': [
-                    DOCUMENTAL_AND_COMEDY,
-                    SPORT,
-                    SERIES
-                ],
-                'forums': [
-                    NON_RUSSIAN_MOVIES,
-                    RUSSIAN_MOVIES,
-                    ART_HOUSE,
-                    THEATRE,
-                    DVD_VIDEO,
-                    HD_VIDEO,
-                    THREEDIMENSIONALMOVIES,
-                    CARTOONS,
-                    CARTOON_SERIES,
-                    ANIME
-                ]
+                'groupId': VIDEO_GROUP
             }
         },
         {

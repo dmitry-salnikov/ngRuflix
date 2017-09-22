@@ -20,17 +20,6 @@ export default function (Loki) {
         },
         templateUrl: 'app/browse/directives/categoriesView/categoriesView.html',
         link: function ($scope) {
-            function LokiQueries() {
-                return {
-                    /**
-                     * @param {number} id of forum
-                     * @return {array} Array of its subforums
-                     */
-                    getSubforumsByForumId: function (id) {
-                        return Loki.getForumsDTO().find({parent: id});
-                    }
-                };
-            }
 
             /**
              * @type {number} currently selected subforum
@@ -46,7 +35,7 @@ export default function (Loki) {
                 var forum = $scope.categoryViewObject.children[index];
                 //if subforum go to it now
                 if (forum.type === 'subforum') {
-                    $scope.openSubforum(forum);
+                    $scope.openSubforum(forum.id);
                 }
                 if (!forum.subforums) {
                     forum.subforums = new LokiQueries()

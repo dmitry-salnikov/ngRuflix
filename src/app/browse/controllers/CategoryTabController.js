@@ -5,11 +5,11 @@
  *
  * @param {!angular.Scope} $scope
  * @param {*} $stateParams
- * @param {Loki} Loki
+ * @param {CategoriesHelper} CategoriesHelper
  * @constructor
  * @export
  */
-export default function ($scope, $stateParams, Loki) {
+export default function ($scope, $stateParams, CategoriesHelper) {
     'use strict';
 
     /**
@@ -67,28 +67,24 @@ export default function ($scope, $stateParams, Loki) {
     $scope.categoryViewObjects = [];
 
     function init() {
-        $scope.id = $stateParams.id;
-        var subCategories = $stateParams.subCategories;
-        var forums = $stateParams.forums;
-        if (subCategories) {
-            subCategories.forEach(function(subCategory) {
-                $scope.categoryViewObjects.push(
-                    getCategoryViewObject(
-                        new LokiQueries().getCategoryById(subCategory),
-                        new LokiQueries().getCategoryChildrenById(subCategory)
-                    )
-                );
-            });
-        }
-        if (forums) {
-            forums.forEach(function(forum) {
-                $scope.categoryViewObjects.push(
-                    getCategoryViewObject(
-                        new LokiQueries().getForumById(forum),
-                        new LokiQueries().getSubforumsByForumId(forum)
-                    ));
-            });
-        }
+        let groupId = $stateParams.groupId;
+        console.log('groupId', groupId);
+        let categories = CategoriesHelper.getCategoriesInGroup(groupId);
+        console.log('categories', categories);
+        categories.forEach((value, index) => {
+            $scope.categoryViewObjects.push(
+                getCategoryViewObject(
+                    value,
+                    value.forums
+                )
+            );
+        })
+
+        console.log($scope.categoryViewObjects);
+    }
+
+    function getCategoriesByGroupId(groupId) {
+
     }
 
     /**
