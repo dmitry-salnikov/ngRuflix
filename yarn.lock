@@ -80,6 +80,10 @@ angular-material@^1.1.1:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/angular-material/-/angular-material-1.1.5.tgz#a5450cd8205e15a7691edc389476094cf86d592b"
 
+angular-messages@^1.6.6:
+  version "1.6.6"
+  resolved "https://registry.yarnpkg.com/angular-messages/-/angular-messages-1.6.6.tgz#a9bb3fc5f971d745cd3a3bdbaabc6f1f4deb13f3"
+
 angular-mocks@^1.5.0:
   version "1.6.5"
   resolved "https://registry.yarnpkg.com/angular-mocks/-/angular-mocks-1.6.5.tgz#c62f8014cc6d3ed3fd1b383a634ca0009af3efee"
@@ -102,9 +106,13 @@ angular-ui-router@^0.4.2:
   dependencies:
     angular "^1.0.8"
 
-"angular@>=1.2.26 <=1.6", angular@>=1.3.0, angular@^1.0.8, angular@^1.6.0:
+"angular@>=1.2.26 <=1.6", angular@>=1.3.0, angular@^1.0.8:
   version "1.6.5"
   resolved "https://registry.yarnpkg.com/angular/-/angular-1.6.5.tgz#37f788eebec5ce2e3fa02b17bbcb2a231576a0d6"
+
+angular@^1.6.3:
+  version "1.6.6"
+  resolved "https://registry.yarnpkg.com/angular/-/angular-1.6.6.tgz#fd5a3cfb437ce382d854ee01120797978527cb64"
 
 ansi-escapes@^2.0.0:
   version "2.0.0"
@@ -2334,10 +2342,6 @@ fstream@^1.0.0, fstream@^1.0.10, fstream@^1.0.2:
 function-bind@^1.0.2:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.0.tgz#16176714c801798e4e8f2cf7f7529467bb4a5771"
-
-"fzn-angular-popover@git+https://github.com/FauzanKhan/angular-popover.git":
-  version "1.0.0"
-  resolved "git+https://github.com/FauzanKhan/angular-popover.git#69661dfef2a3eeae57e864ac1ae44f89473b8d7a"
 
 gauge@~2.7.3:
   version "2.7.4"

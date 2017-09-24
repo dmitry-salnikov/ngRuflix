@@ -122,10 +122,10 @@ export default function PlayerService(TorrentAPI,
     function onPlaying() {
         //get ffmpeg metadata
 
-        TorrentAPI.getMetadata(playerStatus.getCurrentTrack().id)
-            .then(function(metadata) {
-                playerStatus.getCurrentTrack().metadata = metadata.data;
-            });
+        // TorrentAPI.getMetadata(playerStatus.getCurrentTrack().id)
+        //     .then(function(metadata) {
+        //         playerStatus.getCurrentTrack().metadata = metadata.data;
+        //     });
     }
 
     function ended() {

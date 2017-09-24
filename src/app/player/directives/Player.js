@@ -13,18 +13,22 @@ import {PLAYER_GLOBAL_CONTROLS} from "../services/PlayerService";
  * @return {angular.directive}
  */
 export default function (PlayerService,
-                               $state,
-                               $rootScope,
-                               $timeout,
-                               PLAYING_STATUS,
-                               $mdToast) {
+                         $state,
+                         $rootScope,
+                         $timeout,
+                         PLAYING_STATUS,
+                         $mdToast) {
     return {
         restrict: 'E',
         templateUrl: 'app/player/templates/player.html',
         link: function (scope) {
             'use strict';
             scope.enabled = false;
-            var lockSlider = false;
+            /**
+             * watcher for time slider
+             * @type {null}
+             */
+            let watcher = null;
             scope.playingStatusEnum = PLAYING_STATUS;
             scope.playerStatus = {
                 track: {
@@ -46,7 +50,7 @@ export default function (PlayerService,
                 scope.currentState = $state.current.name;
             }
 
-            scope.openNowPlaying = function() {
+            scope.openNowPlaying = function () {
                 if (scope.playerStatus.getCurrentTrack().mime.indexOf('video') > -1) {
                     $state.go('app.video');
                     scope.currentState = 'app.video';
@@ -56,50 +60,56 @@ export default function (PlayerService,
                 }
             };
 
-            scope.closeNowPlaying = function() {
+            scope.closeNowPlaying = function () {
                 $rootScope.$broadcast(PLAYER_GLOBAL_CONTROLS.CLOSE_NOW_PLAYING);
                 $timeout(updateCurrentState);
             };
 
-            scope.unlockPositionSlider = function() {
-                lockSlider = true;
-                    PlayerService.setPosition(scope.position);
-                    scope.$evalAsync(function() {
-                        lockSlider = false;
-                    }.bind(this));
-            };
-
-            scope.volumeSliderController = function($scope) {
+            scope.volumeSliderController = function ($scope) {
                 $scope.$watch('volume', (newVal) => PlayerService.setVolume(newVal))
             };
 
-            scope.fullscreen = function() {
+            scope.fullscreen = function () {
                 $rootScope.$broadcast(PLAYER_GLOBAL_CONTROLS.OPEN_FULLSCREEN);
             };
+
+            function setPosWatcher() {
+                watcher = scope.$watch('position', (newVal, oldVal) => {
+                    if (newVal && oldVal) {
+                        PlayerService.setPosition(newVal)
+                    }
+                });
+            }
+
+            function unsetPosWatcher() {
+                if (angular.isFunction(watcher)) watcher();
+            }
 
             /**
              * @implements {IAbstractPlayer}
              * @constructor
              */
-            function PlayerListener() {}
-            PlayerListener.prototype.updateStatus = function(status) {
-                scope.playerStatus = status;
-                if (status.getCurrentTrack() && !lockSlider) {
-                    console.log(status);
+            function PlayerListener() {
+            }
+
+            PlayerListener.prototype.updateStatus = function (status) {
+                unsetPosWatcher();
+                if (status.getCurrentTrack()) {
                     scope.position = status.position;
+                    setPosWatcher();
                 }
             };
-            PlayerListener.prototype.activate = function() {
+            PlayerListener.prototype.activate = function () {
                 scope.enabled = true;
             };
-            PlayerListener.prototype.deactivate = function() {
+            PlayerListener.prototype.deactivate = function () {
                 scope.enabled = false;
             };
-            PlayerListener.prototype.requestVideo = function() {
+            PlayerListener.prototype.requestVideo = function () {
                 $state.go('app.video');
                 scope.currentState = 'app.video';
             };
-            PlayerListener.prototype.requestAudio = function() {
+            PlayerListener.prototype.requestAudio = function () {
                 updateCurrentState();
             };
             PlayerListener.prototype.error = function (message) {
