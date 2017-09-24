@@ -23,12 +23,12 @@
           "subforums": [
             {
               "id": 428,
-              "text": "World pop music (lossless)",
+              "text": "World pop music",
               "transID": 4
             },
             {
               "id": 1362,
-              "text": "World pop music (lossless) (mixtapes)",
+              "text": "World pop music (mixtapes)",
               "transID": 5
             }
           ]
@@ -117,19 +117,37 @@
     },
     {
       "id": 4,
-      "tag": "WORLD_POP_MUSIC_LOSSLESS",
+      "tag": "WORLD_POP_MUSIC",
       "translations": [
         {
           "langID": 1,
-          "text": "Światowa muzyka popularna (jakość bezstratna)"
+          "text": "Światowa muzyka popularna"
         },
         {
           "langID": 2,
-          "text": "World pop music (lossless quality)"
+          "text": "World pop music"
         },
         {
           "langID": 3,
-          "text": "Зарубежная поп-музыка (lossless)"
+          "text": "Зарубежная поп-музыка"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "tag": "WORLD_POP_MUSIC_MIXTAPES",
+      "translations": [
+        {
+          "langID": 1,
+          "text": "Światowa muzyka popularna - składanki"
+        },
+        {
+          "langID": 2,
+          "text": "World pop music - mixtapes"
+        },
+        {
+          "langID": 3,
+          "text": "Зарубежная поп-музыка (сборники) (lossy)"
         }
       ]
     }
