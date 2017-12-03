@@ -97,7 +97,60 @@
       "id": 1,
       "groupID": 0,
       "transID": 2,
-      "name": "JAZZ/BLUES_MUSIC"
+      "name": "JAZZ/BLUES_MUSIC",
+      "forums": [
+        {
+          "id": 2267,
+          "text": "World Jazz",
+          "transID": 16,
+          "subforums": [
+            {
+              "id": 2277,
+              "text": "Early Jazz, Swing, Gypsy (lossless)"
+            },
+            {
+              "id": 2278,
+              "text": "Bop"
+            },
+            {
+              "id": 2279,
+              "text": "Mainstream Jazz, Cool (lossless)"
+            },
+            {
+              "id": 2280,
+              "text": "Jazz Fusion"
+            },
+            {
+              "id": 2281,
+              "text": "World Fusion, Ethnic Jazz (lossless)"
+            },
+            {
+              "id": 2282,
+              "text": "Avant-Garde Jazz, Free Improvisation (lossless)"
+            },
+            {
+              "id": 2353,
+              "text": "Modern Creative, Third Stream (lossless)"
+            },
+            {
+              "id": 2284,
+              "text": "Smooth, Jazz-Pop (lossless)"
+            },
+            {
+              "id": 2285,
+              "text": "Funk, Soul, R&B (lossless)"
+            },
+            {
+              "id": 2286,
+              "text": "Jazz mixtapes"
+            },
+            {
+              "id": 2287,
+              "text": "Jazz (lossy)"
+            }
+          ]
+        }
+      ]
     }
   ],
   "TRANSLATIONS": [
@@ -332,6 +385,78 @@
         {
           "langID": 3,
           "text": "Отечественная поп-музыка (сборники)"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "tag": "RUSSIAN_POP_MUSIC_LOSSLESS",
+      "translations": [
+        {
+          "langID": 1,
+          "text": "Rosyjski pop - jakość bezstratna"
+        },
+        {
+          "langID": 2,
+          "text": "Russian pop - lossless"
+        },
+        {
+          "langID": 3,
+          "text": "Отечественная поп-музыка (lossless)"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "tag": "SOVIET_STATE_RETRO",
+      "translations": [
+        {
+          "langID": 1,
+          "text": "Radziecka scena (retro)"
+        },
+        {
+          "langID": 2,
+          "text": "Soviet stage (retro)"
+        },
+        {
+          "langID": 3,
+          "text": "Советская эстрада, Ретро"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "tag": "SOVIET_STATE_RETRO_LOSSLESS",
+      "translations": [
+        {
+          "langID": 1,
+          "text": "Radziecka sceca (retro) (jakość bezstratna)"
+        },
+        {
+          "langID": 2,
+          "text": "Soviet stage (retro) (lossless)"
+        },
+        {
+          "langID": 3,
+          "text": "Советская эстрада, Ретро (lossless)"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "tag": "WORLD_JAZZ",
+      "translations": [
+        {
+          "langID": 1,
+          "text": "Światowy Jazz"
+        },
+        {
+          "langID": 2,
+          "text": "World Jazz"
+        },
+        {
+          "langID": 3,
+          "text": "Зарубежный джаз"
         }
       ]
     }

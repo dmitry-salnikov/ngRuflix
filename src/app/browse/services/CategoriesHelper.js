@@ -19,13 +19,19 @@
  * Created by TheCyberd3m0n (thecyberd3m0n@gmail.com) on 21.09.17.
  *
  */
-import categories from '../const/categories.json';
+import categories from '../const/categories-list.json';
 import _ from 'lodash';
-
+/**
+ * @ngInject
+ * @param $translate
+ * @returns {{getCategoriesInGroup: getCategoriesInGroup}}
+ */
 export default function ($translate) {
     let catJson = categories;
-    let currentLanguage = _.find(catJson.LANGUAGES, (x) => x.tag === $translate.use());
-    console.log('currentLanguage', currentLanguage);
+    let currentLanguage;
+    function updateLangInfo() {
+        currentLanguage = _.find(catJson.LANGUAGES, (x) => x.tag === $translate.use());
+    }
 
     /**
      * Returns category or forum translated to current language
@@ -33,11 +39,16 @@ export default function ($translate) {
      * @return entity
      */
     function translateEntity(entity) {
-        console.log('translating entity', entity);
+        updateLangInfo();
         let translation = catJson.TRANSLATIONS.find((x) => x.id === entity.transID);
-        if (!translation) return entity;
+        if (!translation) {
+            entity.name = entity.text;
+            return entity;
+        }
         let ts = translation.translations.find((x) => x.langID === currentLanguage.id);
-        entity.name = ts.text;
+        if (ts) {
+            entity.name = ts.text;
+        }
         return entity;
     }
 
