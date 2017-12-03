@@ -30,6 +30,11 @@
               "id": 1362,
               "text": "World pop music (mixtapes)",
               "transID": 5
+            },
+            {
+              "id": 429,
+              "text": "World pop music (lossless)",
+              "transID": 6
             }
           ]
         }
@@ -148,6 +153,24 @@
         {
           "langID": 3,
           "text": "Зарубежная поп-музыка (сборники) (lossy)"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "tag": "WORLD_POP_MUSIC_LOSSLESS",
+      "translations": [
+        {
+          "langID": 1,
+          "text": "Światowa muzyka popularna - jakość bezstratna"
+        },
+        {
+          "langID": 2,
+          "text": "World pop music - lossless quality"
+        },
+        {
+          "langID": 3,
+          "text": "Зарубежная поп-музыка (lossless)"
         }
       ]
     }
