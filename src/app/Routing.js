@@ -18,13 +18,13 @@ module.exports = function ($stateProvider,
     $stateProvider
         .state('splash', {
             url: '/splash',
-            templateUrl: 'app/tpl/splash.html',
+            templateUrl: './tpl/splash.tpl.html',
             controller: 'SplashScreenController'
         })
         .state('app', {
             url: '/app',
             abstract: true,
-            templateUrl: 'app/tpl/app.html',
+            templateUrl: './tpl/app.tpl.html',
             controller: 'AppController',
             controllerAs: 'vm'
         });

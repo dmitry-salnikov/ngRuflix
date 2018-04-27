@@ -13,7 +13,7 @@ export default function($stateProvider) {
             $stateProvider
                 .state('app.nowplaying', {
                     url: '/nowplaying',
-                    templateUrl: 'app/player/templates/nowplaying.html',
+                    templateUrl: './templates/nowplaying.tpl.html',
                     controller: 'NowPlayingController',
                     controllerAs: 'vm',
                     resolve: {
@@ -23,7 +23,7 @@ export default function($stateProvider) {
                 })
                 .state('app.video', {
                     url: '/video',
-                    templateUrl: 'app/player/templates/video.html',
+                    templateUrl: './templates/video.tpl.html',
                     controller: 'VideoController',
                     controllerAs: 'vm',
                     cache: false,

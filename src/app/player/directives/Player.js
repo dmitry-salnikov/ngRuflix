@@ -20,7 +20,7 @@ export default function (PlayerService,
                                $mdToast) {
     return {
         restrict: 'E',
-        templateUrl: 'app/player/templates/player.html',
+        templateUrl: '../templates/player.tpl.html',
         link: function (scope) {
             'use strict';
             scope.enabled = false;

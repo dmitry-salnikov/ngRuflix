@@ -6,13 +6,13 @@ export default function ($stateProvider) {
     $stateProvider
         .state('app.browse', {
             url: '/browse',
-            templateUrl: 'app/browse/tpl/browse.html',
+            templateUrl: './tpl/browse.tpl.html',
             controller: 'BrowseController',
             controllerAs: 'vm'
         })
         .state('app.browse.category', {
             url: '/category/:id',
-            templateUrl: 'app/browse/tpl/category.html',
+            templateUrl: './tpl/category.tpl.html',
             controller: 'CategoryTabController',
             controllerAs: 'vm',
             params: {
@@ -23,28 +23,28 @@ export default function ($stateProvider) {
         })
         .state('app.browse.dashboard', {
             url: '/dashboard',
-            templateUrl: 'app/browse/tpl/dashboard.html',
+            templateUrl: './tpl/dashboard.tpl.html',
             controller: 'DashboardTabController',
             controllerAs: 'vm',
             cache: true
         })
         .state('app.browse.subforum', {
             url: '/subforum/:id',
-            templateUrl: 'app/browse/tpl/subforum.html',
+            templateUrl: './tpl/subforum.tpl.html',
             controller: 'SubforumTabController',
             controllerAs: 'vm',
             cache: true
         })
         .state('app.browse.search', {
             url: '/search/:query',
-            templateUrl: 'app/browse/tpl/search.html',
+            templateUrl: './tpl/search.tpl.html',
             controller: 'SearchTabController',
             controllerAs: 'vm',
             cache: true
         })
         .state('app.browse.liked', {
             url: '/liked',
-            templateUrl: 'app/browse/tpl/liked.html',
+            templateUrl: './tpl/liked.tpl.html',
             controller: 'LikedTabController',
             controllerAs: 'vm',
             cache: false

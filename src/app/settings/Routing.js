@@ -6,11 +6,9 @@ export default function ($stateProvider) {
         .state(
             'app.settings', {
                 url: '/settings',
-                templateUrl: 'app/settings/tpl/settings.html',
+                templateUrl: './tpl/settings.tpl.html',
                 controller: 'SettingsController',
                 controllerAs: 'vm'
             }
         )
-
-
 };

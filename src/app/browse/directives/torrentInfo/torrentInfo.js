@@ -18,7 +18,7 @@ export default function (RutrackerAPI, PlayerService, Loki, $mdToast, $rootScope
         scope: {
             entry: '='
         },
-        templateUrl: 'app/browse/directives/torrentInfo/torrentInfo.html',
+        templateUrl: 'torrentInfo.tpl.html',
         link: function (scope) {
             function init() {
                 scope.files = [];

@@ -3,11 +3,11 @@ module.exports = function ($stateProvider) {
                 .state('auth', {
                     url: '/auth',
                     abstract: true,
-                    templateUrl: 'app/auth/tpl/auth.html'
+                    templateUrl: './tpl/auth.tpl.html'
                 })
                 .state('auth.login', {
                     url: '/login',
-                    templateUrl: 'app/auth/tpl/login.html',
+                    templateUrl: './tpl/login.tpl.html',
                     controller: 'LoginController'
                 });
         };

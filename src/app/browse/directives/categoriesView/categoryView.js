@@ -18,7 +18,7 @@ export default function (Loki) {
         scope: {
             categoryViewObject: '='
         },
-        templateUrl: 'app/browse/directives/categoriesView/categoriesView.html',
+        templateUrl: 'categoriesView.tpl.html',
         link: function ($scope) {
             function LokiQueries() {
                 return {
