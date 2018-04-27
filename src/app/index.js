@@ -7,8 +7,6 @@ import '../index.html';
 import angular from 'angular';
 import 'lodash';
 import './css/custom.css';
-import 'es5-shim';
-import 'es5-sham';
 import 'jquery';
 import 'angular-ui-router';
 import 'angular-material';
