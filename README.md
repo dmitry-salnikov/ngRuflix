@@ -40,7 +40,7 @@ Planned:
 ****
 
 **Install**
-
+- Download and install backend: https://github.com/thecyberd3m0n/backend-rustreamer
 - `npm install ngRuflix`
 - `npm start`
 - Go to `http://localhost:8080` and use your rutracker.org credentials for login, or use guest mode.
