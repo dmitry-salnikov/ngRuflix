@@ -7,8 +7,7 @@
     "server": "webpack-dev-server --history-api-fallback --inline --hot --progress",
     "test": "karma start",
     "test-watch": "karma start --auto-watch --no-single-run",
-    "start": "npm run server",
-    "postinstall": "npm run build"
+    "start": "npm run server"
   },
   "repository": {
     "type": "git",
@@ -41,7 +40,8 @@
     "rimraf": "^2.5.1",
     "roboto-fontface": "^0.8.0",
     "style-loader": "^0.13.0",
-    "svg-morpheus": "^0.3.0"
+    "svg-morpheus": "^0.3.0",
+    "url-loader": "^1.0.1"
   },
   "devDependencies": {
     "angular-mocks": "^1.5.0",
